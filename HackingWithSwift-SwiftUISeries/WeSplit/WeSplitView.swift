@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  WeSplitView.swift
 //  WeSplit
 //
 //  Created by Sylvan  on 30/04/2025.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+public struct WeSplitView: View {
     @State private var checkAmount = 0.0
     @State private var numberOfPeople = 2
     @State private var tipPercentage = 20
@@ -29,7 +29,9 @@ struct ContentView: View {
         return grandTotal / peopleCount
     }
 
-    var body: some View {
+    public init() {} // Needed for external access
+
+    public var body: some View {
         NavigationStack {
             Form {
                 Section {
@@ -78,5 +80,6 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    WeSplitView()
 }
+
