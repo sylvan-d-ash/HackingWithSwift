@@ -7,24 +7,53 @@
 
 import SwiftUI
 
+private final class GuessTheFlagBundleLocator {}
+
 public struct GuessTheFlagView: View {
     public init() {}
 
+    @State private var showingScore = false
+    @State private var scoreTitle = ""
+    @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Spain", "UK", "Ukraine", "US"].shuffled()
+    @State private var correctAnswer = Int.random(in: 0...2)
+
     public var body: some View {
         ZStack {
-            VStack(spacing: 0) {
-                Color.red
-                Color.blue
+            Color.blue
+                .ignoresSafeArea()
+
+            VStack(spacing: 30) {
+                VStack {
+                    Text("Tap the flag of: ")
+                    Text(countries[correctAnswer])
+                }
+                .foregroundStyle(Color.white)
+
+                ForEach(0..<3) { number in
+                    Button {
+                        flagTapped(number)
+                    } label: {
+                        Image(countries[number], bundle: Bundle(for: GuessTheFlagBundleLocator.self))
+                    }
+                }
             }
-
-            AngularGradient(colors: [.red, .yellow, .green, .blue], center: .center)
-
-            Text("Hello universe!")
-                .foregroundStyle(.secondary)
-                .padding(50)
-                .background(.ultraThinMaterial)
         }
-        .ignoresSafeArea()
+        .alert(scoreTitle, isPresented: $showingScore) {
+            Button("Continue", action: askQuestion)
+        } message: {
+            Text("Your score is: \(scoreTitle)")
+        }
+    }
+
+    private func flagTapped(_ number: Int) {
+        scoreTitle = number == correctAnswer ? "Correct" : "Wrong"
+
+        showingScore = true
+    }
+
+    private func askQuestion() {
+        countries.shuffle()
+        correctAnswer = Int.random(in: 0...2)
     }
 }
 
