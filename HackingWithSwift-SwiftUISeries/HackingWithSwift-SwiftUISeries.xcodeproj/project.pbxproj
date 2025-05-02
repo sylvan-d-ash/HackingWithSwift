@@ -11,6 +11,8 @@
 		045024792DC24129002EDF49 /* WeSplit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 045024702DC24129002EDF49 /* WeSplit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0450248D2DC24781002EDF49 /* GuessTheFlag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045024852DC24781002EDF49 /* GuessTheFlag.framework */; };
 		0450248E2DC24781002EDF49 /* GuessTheFlag.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 045024852DC24781002EDF49 /* GuessTheFlag.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		045024B42DC526FE002EDF49 /* BetterRest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045024AC2DC526FE002EDF49 /* BetterRest.framework */; };
+		045024B52DC526FE002EDF49 /* BetterRest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 045024AC2DC526FE002EDF49 /* BetterRest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +30,13 @@
 			remoteGlobalIDString = 045024842DC24781002EDF49;
 			remoteInfo = GuessTheFlag;
 		};
+		045024B22DC526FE002EDF49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04909D3E2DC23A650042647E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 045024AB2DC526FE002EDF49;
+			remoteInfo = BetterRest;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +48,7 @@
 			files = (
 				0450248E2DC24781002EDF49 /* GuessTheFlag.framework in Embed Frameworks */,
 				045024792DC24129002EDF49 /* WeSplit.framework in Embed Frameworks */,
+				045024B52DC526FE002EDF49 /* BetterRest.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,6 +58,7 @@
 /* Begin PBXFileReference section */
 		045024702DC24129002EDF49 /* WeSplit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeSplit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		045024852DC24781002EDF49 /* GuessTheFlag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GuessTheFlag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		045024AC2DC526FE002EDF49 /* BetterRest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BetterRest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04909D462DC23A660042647E /* HackingWithSwift-SwiftUISeries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HackingWithSwift-SwiftUISeries.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -60,6 +71,11 @@
 		045024862DC24781002EDF49 /* GuessTheFlag */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = GuessTheFlag;
+			sourceTree = "<group>";
+		};
+		045024AD2DC526FE002EDF49 /* BetterRest */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BetterRest;
 			sourceTree = "<group>";
 		};
 		04909D482DC23A660042647E /* HackingWithSwift-SwiftUISeries */ = {
@@ -84,12 +100,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		045024A92DC526FE002EDF49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04909D432DC23A660042647E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0450248D2DC24781002EDF49 /* GuessTheFlag.framework in Frameworks */,
 				045024782DC24129002EDF49 /* WeSplit.framework in Frameworks */,
+				045024B42DC526FE002EDF49 /* BetterRest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +126,7 @@
 				04909D482DC23A660042647E /* HackingWithSwift-SwiftUISeries */,
 				045024712DC24129002EDF49 /* WeSplit */,
 				045024862DC24781002EDF49 /* GuessTheFlag */,
+				045024AD2DC526FE002EDF49 /* BetterRest */,
 				04909D472DC23A660042647E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,6 +137,7 @@
 				04909D462DC23A660042647E /* HackingWithSwift-SwiftUISeries.app */,
 				045024702DC24129002EDF49 /* WeSplit.framework */,
 				045024852DC24781002EDF49 /* GuessTheFlag.framework */,
+				045024AC2DC526FE002EDF49 /* BetterRest.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,6 +153,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		045024802DC24781002EDF49 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		045024A72DC526FE002EDF49 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -182,6 +215,29 @@
 			productReference = 045024852DC24781002EDF49 /* GuessTheFlag.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		045024AB2DC526FE002EDF49 /* BetterRest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 045024B82DC526FE002EDF49 /* Build configuration list for PBXNativeTarget "BetterRest" */;
+			buildPhases = (
+				045024A72DC526FE002EDF49 /* Headers */,
+				045024A82DC526FE002EDF49 /* Sources */,
+				045024A92DC526FE002EDF49 /* Frameworks */,
+				045024AA2DC526FE002EDF49 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				045024AD2DC526FE002EDF49 /* BetterRest */,
+			);
+			name = BetterRest;
+			packageProductDependencies = (
+			);
+			productName = BetterRest;
+			productReference = 045024AC2DC526FE002EDF49 /* BetterRest.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		04909D452DC23A660042647E /* HackingWithSwift-SwiftUISeries */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04909D522DC23A670042647E /* Build configuration list for PBXNativeTarget "HackingWithSwift-SwiftUISeries" */;
@@ -196,6 +252,7 @@
 			dependencies = (
 				045024772DC24129002EDF49 /* PBXTargetDependency */,
 				0450248C2DC24781002EDF49 /* PBXTargetDependency */,
+				045024B32DC526FE002EDF49 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				04909D482DC23A660042647E /* HackingWithSwift-SwiftUISeries */,
@@ -223,6 +280,9 @@
 					045024842DC24781002EDF49 = {
 						CreatedOnToolsVersion = 16.3;
 					};
+					045024AB2DC526FE002EDF49 = {
+						CreatedOnToolsVersion = 16.3;
+					};
 					04909D452DC23A660042647E = {
 						CreatedOnToolsVersion = 16.3;
 					};
@@ -245,6 +305,7 @@
 				04909D452DC23A660042647E /* HackingWithSwift-SwiftUISeries */,
 				0450246F2DC24129002EDF49 /* WeSplit */,
 				045024842DC24781002EDF49 /* GuessTheFlag */,
+				045024AB2DC526FE002EDF49 /* BetterRest */,
 			);
 		};
 /* End PBXProject section */
@@ -258,6 +319,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		045024832DC24781002EDF49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		045024AA2DC526FE002EDF49 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -288,6 +356,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		045024A82DC526FE002EDF49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04909D422DC23A660042647E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -307,6 +382,11 @@
 			isa = PBXTargetDependency;
 			target = 045024842DC24781002EDF49 /* GuessTheFlag */;
 			targetProxy = 0450248B2DC24781002EDF49 /* PBXContainerItemProxy */;
+		};
+		045024B32DC526FE002EDF49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 045024AB2DC526FE002EDF49 /* BetterRest */;
+			targetProxy = 045024B22DC526FE002EDF49 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -443,6 +523,79 @@
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daitensai.GuessTheFlag;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		045024B62DC526FE002EDF49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.daitensai.BetterRest;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		045024B72DC526FE002EDF49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.daitensai.BetterRest;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -664,6 +817,15 @@
 			buildConfigurations = (
 				045024902DC24781002EDF49 /* Debug */,
 				045024912DC24781002EDF49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		045024B82DC526FE002EDF49 /* Build configuration list for PBXNativeTarget "BetterRest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				045024B62DC526FE002EDF49 /* Debug */,
+				045024B72DC526FE002EDF49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
