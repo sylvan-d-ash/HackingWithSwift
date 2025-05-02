@@ -7,6 +7,8 @@
 
 import SwiftUI
 import WeSplit
+import GuessTheFlag
+import BetterRest
 
 struct ContentView: View {
     var body: some View {
@@ -14,6 +16,12 @@ struct ContentView: View {
             List {
                 NavigationLink("WeSplit") {
                     WeSplitView()
+                }
+                NavigationLink("Guess The Flag") {
+                    GuessTheFlagView()
+                }
+                NavigationLink("Better Rest") {
+                    BetterRestView()
                 }
             }
             .navigationTitle("Hacking With Swift")
