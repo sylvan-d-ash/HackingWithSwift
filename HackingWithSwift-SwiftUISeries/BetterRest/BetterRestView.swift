@@ -9,7 +9,7 @@ import CoreML
 import SwiftUI
 
 public struct BetterRestView: View {
-    @State private var wakeUp = Date.now
+    @State private var wakeUp = defaultWakeTime
     @State private var sleepAmount = 8.0
     @State private var coffeeAmount = 1
     @State private var alertTitle = ""
@@ -18,20 +18,36 @@ public struct BetterRestView: View {
 
     public init() {}
 
+    static private var defaultWakeTime: Date {
+        var components = DateComponents()
+        components.hour = 7
+        components.minute = 0
+        return Calendar.current.date(from: components) ?? .now
+    }
+
     public var body: some View {
-        VStack {
-            Text("When do you want ot wake up?")
-                .font(.headline)
+        Form {
+            VStack(alignment: .leading) {
+                Text("When do you want ot wake up?")
+                    .font(.headline)
 
-            DatePicker("Please enter a time", selection: $wakeUp, displayedComponents: .hourAndMinute)
-                .labelsHidden()
+                DatePicker("Please enter a time", selection: $wakeUp, displayedComponents: .hourAndMinute)
+                    .labelsHidden()
+            }
 
-            Stepper("\(sleepAmount.formatted()) hours", value: $sleepAmount, in: 4...12, step: 0.25)
+            VStack(alignment: .leading) {
+                Text("Desired amount of sleep")
+                    .font(.headline)
 
-            Text("Daily coffe intake")
-                .font(.headline)
+                Stepper("\(sleepAmount.formatted()) hours", value: $sleepAmount, in: 4...12, step: 0.25)
+            }
 
-            Stepper("\(coffeeAmount) cup(s)", value: $coffeeAmount, in: 1...20)
+            VStack(alignment: .leading) {
+                Text("Daily coffe intake")
+                    .font(.headline)
+
+                Stepper("^[\(coffeeAmount) cup](inflect: true)", value: $coffeeAmount, in: 1...20)
+            }
         }
         .navigationTitle("Better Rest")
         .toolbar {
