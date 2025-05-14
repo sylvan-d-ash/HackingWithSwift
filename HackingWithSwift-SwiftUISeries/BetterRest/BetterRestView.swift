@@ -27,25 +27,38 @@ public struct BetterRestView: View {
 
     public var body: some View {
         Form {
-            VStack(alignment: .leading) {
-                Text("When do you want ot wake up?")
-                    .font(.headline)
+//            VStack(alignment: .leading) {
+//                Text("When do you want to wake up?")
+//                    .font(.headline)
+//
+//                DatePicker("Please enter a time", selection: $wakeUp, displayedComponents: .hourAndMinute)
+//                    .labelsHidden()
+//            }
+//
+//            VStack(alignment: .leading) {
+//                Text("Desired amount of sleep")
+//                    .font(.headline)
+//
+//                Stepper("\(sleepAmount.formatted()) hours", value: $sleepAmount, in: 4...12, step: 0.25)
+//            }
+//
+//            VStack(alignment: .leading) {
+//                Text("Daily coffe intake")
+//                    .font(.headline)
+//
+//                Stepper("^[\(coffeeAmount) cup](inflect: true)", value: $coffeeAmount, in: 1...20)
+//            }
 
+            Section("When do you want to wake up?") {
                 DatePicker("Please enter a time", selection: $wakeUp, displayedComponents: .hourAndMinute)
                     .labelsHidden()
             }
 
-            VStack(alignment: .leading) {
-                Text("Desired amount of sleep")
-                    .font(.headline)
-
+            Section("Desired amount of sleep") {
                 Stepper("\(sleepAmount.formatted()) hours", value: $sleepAmount, in: 4...12, step: 0.25)
             }
 
-            VStack(alignment: .leading) {
-                Text("Daily coffe intake")
-                    .font(.headline)
-
+            Section("Daily coffe intake") {
                 Stepper("^[\(coffeeAmount) cup](inflect: true)", value: $coffeeAmount, in: 1...20)
             }
         }
