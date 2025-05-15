@@ -70,6 +70,64 @@ public struct WordScrambleView: View {
             usedWords.append(answer)
         }
     }
+
+    private func isNewOriginal(word: String, usedWords: [String]) -> Bool {
+        !usedWords.contains(word)
+    }
+
+    private func isReal(word: String) -> Bool {
+        let checker = UITextChecker()
+
+        // create a range to scan the entire length of our string
+        let range = NSRange(location: 0, length: word.utf16.count)
+
+        // check for wrong words
+        let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
+
+        return misspelledRange.location == NSNotFound
+    }
+
+    /// Time complexity: O(n+m)
+    /// n: rootWord
+    /// m: word
+    private func isPossible(word: String, from rootWord: String) -> Bool {
+        var letterCounts = [Character: Int]()
+
+        // time complexity: O(n)
+        for letter in rootWord {
+            letterCounts[letter, default: 0] += 1
+        }
+
+        // time complexity: O(m)
+        for letter in word {
+            if let count = letterCounts[letter], count > 0 {
+                // OK to force unwrap because we've confirmed the key exists
+                letterCounts[letter]! -= 1
+            } else {
+                return false
+            }
+        }
+
+        return true
+    }
+
+    /// Not ideal for high-performance or lage-scale text matching because of O(n^2) time complexity
+    private func isPossible2(word: String, from rootWord: String) -> Bool {
+        var tempWord = rootWord
+
+        // because of the for loop time complexity is: o(n^2)
+        for letter in word {
+            // firstIndex(of:) has O(n) time complexity
+            if let pos = tempWord.firstIndex(of: letter) {
+                // remote(at:) has O(n) time complexity
+                tempWord.remove(at: pos)
+            } else {
+                return false
+            }
+        }
+
+        return true
+    }
 }
 
 #Preview {
