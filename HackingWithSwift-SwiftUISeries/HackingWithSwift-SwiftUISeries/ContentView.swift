@@ -9,6 +9,7 @@ import SwiftUI
 import WeSplit
 import GuessTheFlag
 import BetterRest
+import WordScramble
 
 struct ContentView: View {
     var body: some View {
@@ -22,6 +23,9 @@ struct ContentView: View {
                 }
                 NavigationLink("Better Rest") {
                     BetterRestView()
+                }
+                NavigationLink("Better Rest") {
+                    WordScrambleView()
                 }
             }
             .navigationTitle("Hacking With Swift")
