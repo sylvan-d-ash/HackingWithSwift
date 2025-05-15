@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+/// Since GuessTheFlag is a framework, we need this  to determine the bundle
+/// where the flag images are located.
 private final class GuessTheFlagBundleLocator {}
 
 public struct GuessTheFlagView: View {
