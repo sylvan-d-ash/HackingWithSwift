@@ -17,6 +17,9 @@ public struct WordScrambleView: View {
     @State private var usedWords = [String]()
     @State private var rootWord = ""
     @State private var newWord = ""
+    @State private var errorTitle = ""
+    @State private var errorMessage = ""
+    @State private var showErrorAlert = false
 
     public var body: some View {
         List {
@@ -40,6 +43,9 @@ public struct WordScrambleView: View {
         .navigationTitle(rootWord)
         .onAppear(perform: startGame)
         .onSubmit(addNewWord)
+        .alert(errorTitle, isPresented: $showErrorAlert) {} message: {
+            Text(errorMessage)
+        }
     }
 
     private func startGame() {
@@ -64,8 +70,23 @@ public struct WordScrambleView: View {
 
         // exit if the string is empty
         guard answer.count > 0 else { return }
-
         newWord = ""
+
+        guard isNewOriginal(word: answer, usedWords: usedWords) else {
+            wordError(title: "Word already used", message: "Be more original 😜")
+            return
+        }
+
+        guard isPossible(word: answer, from: rootWord) else {
+            wordError(title: "Word not possible", message: "You can't spell that word from '\(rootWord)'!")
+            return
+        }
+
+        guard isReal(word: answer) else {
+            wordError(title: "Word not recognized", message: "You can't just make them up, you know 😅!")
+            return
+        }
+
         withAnimation {
             usedWords.append(answer)
         }
@@ -85,6 +106,12 @@ public struct WordScrambleView: View {
         let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
 
         return misspelledRange.location == NSNotFound
+    }
+
+    private func wordError(title: String, message: String) {
+        errorTitle = title
+        errorMessage = message
+        showErrorAlert = true
     }
 
     /// Time complexity: O(n+m)
