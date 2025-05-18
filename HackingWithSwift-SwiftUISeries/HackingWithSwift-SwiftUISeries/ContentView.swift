@@ -11,6 +11,7 @@ import GuessTheFlag
 import BetterRest
 import WordScramble
 import Animations
+import iExpense
 
 struct ContentView: View {
     var body: some View {
@@ -30,6 +31,9 @@ struct ContentView: View {
                 }
                 NavigationLink("Animations") {
                     AnimationsView()
+                }
+                NavigationLink("iExpense") {
+                    iExpenseView()
                 }
             }
             .navigationTitle("Hacking With Swift")
