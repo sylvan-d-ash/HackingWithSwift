@@ -12,6 +12,7 @@ import BetterRest
 import WordScramble
 import Animations
 import iExpense
+import Moonshot
 
 struct ContentView: View {
     var body: some View {
@@ -34,6 +35,9 @@ struct ContentView: View {
                 }
                 NavigationLink("iExpense") {
                     iExpenseView()
+                }
+                NavigationLink("Moonshot") {
+                    MoonshotView()
                 }
             }
             .navigationTitle("Hacking With Swift")
