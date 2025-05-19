@@ -12,6 +12,8 @@ struct AddView: View {
     @State private var name: String = ""
     @State private var type: String = ""
     @State private var amount: Double = 0
+    @State private var alertMesssage = ""
+    @State private var isShowingAlert: Bool = false
 
     var expense: Expense
 
@@ -34,12 +36,36 @@ struct AddView: View {
             .navigationTitle("Add new expense")
             .toolbar {
                 Button("Save") {
+                    guard validate() else { return }
                     let item = ExpenseItem(name: name, type: type, amount: amount)
                     expense.items.append(item)
                     dismiss()
                 }
             }
+            .alert("Missing Value", isPresented: $isShowingAlert) {}
+            message: {
+                Text(alertMesssage)
+            }
         }
+    }
+
+    private func validate() -> Bool {
+        if name.isEmpty {
+            alertMesssage = "Name is required."
+            isShowingAlert = true
+            return false
+        }
+        if amount <= 0 {
+            alertMesssage = "Amount must be positive."
+            isShowingAlert = true
+            return false
+        }
+        if type.isEmpty {
+            alertMesssage = "Type is required."
+            isShowingAlert = true
+            return false
+        }
+        return true
     }
 }
 
