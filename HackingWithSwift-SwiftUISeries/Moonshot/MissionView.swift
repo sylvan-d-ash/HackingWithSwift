@@ -29,7 +29,7 @@ private struct CrewMembersView: View {
             HStack {
                 ForEach(crew, id: \.role) { crewMember in
                     NavigationLink {
-                        Text("Astronaut details")
+                        AstronautView(astronaut: crewMember.astronaut)
                     } label: {
                         HStack {
                             Image(crewMember.astronaut.id, bundle: Bundle(for: MoonshotBundleLocator.self))
