@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-private final class MoonshotBundleLocator {}
+final class MoonshotBundleLocator {}
 
 public struct MoonshotView: View {
     private let astronauts: [String: Astronaut] = Bundle(for: MoonshotBundleLocator.self).decode("astronauts.json")
