@@ -32,8 +32,7 @@ private struct CrewMembersView: View {
                         AstronautView(astronaut: crewMember.astronaut)
                     } label: {
                         HStack {
-                            Image(crewMember.astronaut.id, bundle: Bundle(for: MoonshotBundleLocator.self))
-                                .resizable()
+                            ImageView(name: crewMember.astronaut.id)
                                 .frame(width: 104, height: 72)
                                 .clipShape(.capsule)
                                 .overlay(

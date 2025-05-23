@@ -15,7 +15,6 @@ struct ImageView: View {
     var body: some View {
         Image(name, bundle: Bundle(for: MoonshotBundleLocator.self))
             .resizable()
-            .scaledToFit()
     }
 }
 
@@ -36,6 +35,7 @@ private struct GridLayoutView: View {
                     } label: {
                         VStack {
                             ImageView(name: mission.image)
+                                .scaledToFit()
                                 .frame(width: 100, height: 100)
                                 .padding()
 
@@ -77,6 +77,7 @@ private struct ListLayoutView: View {
                 ) {
                     HStack(spacing: 20) {
                         ImageView(name: mission.image)
+                            .scaledToFit()
                             .frame(width: 50, height: 50)
                             .alignmentGuide(.listRowSeparatorLeading) { d in d[.leading] }
 
