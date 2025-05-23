@@ -25,7 +25,7 @@ public struct MoonshotView: View {
                 LazyVGrid(columns: columns, spacing: 15) {
                     ForEach(missions) { mission in
                         NavigationLink {
-                            Text("Detail View")
+                            MissionView(mission: mission, astronauts: astronauts)
                         } label: {
                             VStack {
                                 Image(mission.image, bundle: Bundle(for: MoonshotBundleLocator.self))
