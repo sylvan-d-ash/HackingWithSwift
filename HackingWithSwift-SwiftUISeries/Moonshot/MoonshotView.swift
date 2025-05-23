@@ -37,7 +37,7 @@ public struct MoonshotView: View {
                                     Text(mission.displayName)
                                         .font(.headline)
 
-                                    Text(mission.launchDate ?? "N/A")
+                                    Text(mission.formattedLaunchDate)
                                         .font(.caption)
                                 }
                             }
