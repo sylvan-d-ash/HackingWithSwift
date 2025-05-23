@@ -8,7 +8,24 @@
 import SwiftUI
 
 struct MissionView: View {
+    struct CrewMember {
+        let role: String
+        let astronaut: Astronaut
+    }
+
     let mission: Mission
+    let crew: [CrewMember]
+
+    init(mission: Mission, astronauts: [String: Astronaut]) {
+        self.mission = mission
+        self.crew = mission.crew.map { member in
+            if let astronaut = astronauts[member.name] {
+                return CrewMember(role: member.role, astronaut: astronaut)
+            } else {
+                fatalError("MIssing \(member.name)")
+            }
+        }
+    }
 
     var body: some View {
         ScrollView {
@@ -40,8 +57,9 @@ struct MissionView: View {
 
 #Preview {
     let missions: [Mission] = Bundle(for: MoonshotBundleLocator.self).decode("missions.json")
+    let astronauts: [String: Astronaut] = Bundle(for: MoonshotBundleLocator.self).decode("astronauts.json")
     NavigationStack {
-        MissionView(mission: missions[0])
+        MissionView(mission: missions[0], astronauts: astronauts)
             .preferredColorScheme(.dark)
     }
 }
