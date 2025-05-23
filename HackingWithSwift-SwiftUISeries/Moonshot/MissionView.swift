@@ -7,7 +7,12 @@
 
 import SwiftUI
 
-struct CustomDivider: View {
+private struct CrewMember {
+    let role: String
+    let astronaut: Astronaut
+}
+
+private struct CustomDivider: View {
     var body: some View {
         Rectangle()
             .frame(height: 2)
@@ -16,14 +21,46 @@ struct CustomDivider: View {
     }
 }
 
-struct MissionView: View {
-    struct CrewMember {
-        let role: String
-        let astronaut: Astronaut
-    }
-
-    let mission: Mission
+private struct CrewMembersView: View {
     let crew: [CrewMember]
+
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack {
+                ForEach(crew, id: \.role) { crewMember in
+                    NavigationLink {
+                        Text("Astronaut details")
+                    } label: {
+                        HStack {
+                            Image(crewMember.astronaut.id, bundle: Bundle(for: MoonshotBundleLocator.self))
+                                .resizable()
+                                .frame(width: 104, height: 72)
+                                .clipShape(.capsule)
+                                .overlay(
+                                    Capsule()
+                                        .strokeBorder(.white, lineWidth: 1)
+                                )
+
+                            VStack(alignment: .leading) {
+                                Text(crewMember.astronaut.name)
+                                    .foregroundStyle(.white)
+                                    .font(.headline)
+
+                                Text(crewMember.role)
+                                    .foregroundStyle(.white.opacity(0.5))
+                            }
+                        }
+                        .padding(.horizontal)
+                    }
+                }
+            }
+        }
+    }
+}
+
+struct MissionView: View {
+    let mission: Mission
+    private let crew: [CrewMember]
 
     init(mission: Mission, astronauts: [String: Astronaut]) {
         self.mission = mission
@@ -64,36 +101,7 @@ struct MissionView: View {
                 }
                 .padding(.horizontal)
 
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(crew, id: \.role) { crewMember in
-                            NavigationLink {
-                                Text("Astronaut details")
-                            } label: {
-                                HStack {
-                                    Image(crewMember.astronaut.id, bundle: Bundle(for: MoonshotBundleLocator.self))
-                                        .resizable()
-                                        .frame(width: 104, height: 72)
-                                        .clipShape(.capsule)
-                                        .overlay(
-                                            Capsule()
-                                                .strokeBorder(.white, lineWidth: 1)
-                                        )
-
-                                    VStack(alignment: .leading) {
-                                        Text(crewMember.astronaut.name)
-                                            .foregroundStyle(.white)
-                                            .font(.headline)
-
-                                        Text(crewMember.role)
-                                            .foregroundStyle(.white.opacity(0.5))
-                                    }
-                                }
-                                .padding(.horizontal)
-                            }
-                        }
-                    }
-                }
+                CrewMembersView(crew: crew)
             }
             .padding(.bottom)
         }
