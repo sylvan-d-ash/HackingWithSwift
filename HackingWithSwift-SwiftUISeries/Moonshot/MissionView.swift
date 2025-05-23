@@ -7,6 +7,15 @@
 
 import SwiftUI
 
+struct CustomDivider: View {
+    var body: some View {
+        Rectangle()
+            .frame(height: 2)
+            .foregroundStyle(.lightBackground)
+            .padding(.vertical)
+    }
+}
+
 struct MissionView: View {
     struct CrewMember {
         let role: String
@@ -43,7 +52,15 @@ struct MissionView: View {
                         .font(.title.bold())
                         .padding(.bottom, 5)
 
+                    CustomDivider()
+
                     Text(mission.description)
+
+                    CustomDivider()
+
+                    Text("Crew")
+                        .font(.title.bold())
+                        .padding(.bottom, 5)
                 }
                 .padding(.horizontal)
 
