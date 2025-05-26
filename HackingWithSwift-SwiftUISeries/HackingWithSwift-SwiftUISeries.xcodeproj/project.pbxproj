@@ -21,8 +21,8 @@
 		0481F1402DD7784000C02A87 /* Animations.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0481F1372DD7784000C02A87 /* Animations.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0481F1652DDA0F7B00C02A87 /* iExpense.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0481F15D2DDA0F7B00C02A87 /* iExpense.framework */; };
 		0481F1662DDA0F7B00C02A87 /* iExpense.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0481F15D2DDA0F7B00C02A87 /* iExpense.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		048F54512DE46F7800023A97 /* Navigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048F54492DE46F7800023A97 /* Navigation.framework */; };
-		048F54522DE46F7800023A97 /* Navigation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 048F54492DE46F7800023A97 /* Navigation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		048F54632DE470C500023A97 /* HWSNavigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048F545B2DE470C500023A97 /* HWSNavigation.framework */; };
+		048F54642DE470C500023A97 /* HWSNavigation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 048F545B2DE470C500023A97 /* HWSNavigation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,12 +75,12 @@
 			remoteGlobalIDString = 0481F15C2DDA0F7B00C02A87;
 			remoteInfo = iExpense;
 		};
-		048F544F2DE46F7800023A97 /* PBXContainerItemProxy */ = {
+		048F54612DE470C500023A97 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 04909D3E2DC23A650042647E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 048F54482DE46F7800023A97;
-			remoteInfo = Navigation;
+			remoteGlobalIDString = 048F545A2DE470C500023A97;
+			remoteInfo = HWSNavigation;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -91,12 +91,12 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				048F54522DE46F7800023A97 /* Navigation.framework in Embed Frameworks */,
 				0450248E2DC24781002EDF49 /* GuessTheFlag.framework in Embed Frameworks */,
 				045024792DC24129002EDF49 /* WeSplit.framework in Embed Frameworks */,
 				0481F1402DD7784000C02A87 /* Animations.framework in Embed Frameworks */,
 				045024B52DC526FE002EDF49 /* BetterRest.framework in Embed Frameworks */,
 				042B0F792DD60EFD000F33D9 /* WordScramble.framework in Embed Frameworks */,
+				048F54642DE470C500023A97 /* HWSNavigation.framework in Embed Frameworks */,
 				04551B622DDBA0AB004494C6 /* Moonshot.framework in Embed Frameworks */,
 				0481F1662DDA0F7B00C02A87 /* iExpense.framework in Embed Frameworks */,
 			);
@@ -113,7 +113,7 @@
 		04551B592DDBA0AB004494C6 /* Moonshot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Moonshot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0481F1372DD7784000C02A87 /* Animations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Animations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0481F15D2DDA0F7B00C02A87 /* iExpense.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iExpense.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		048F54492DE46F7800023A97 /* Navigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Navigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		048F545B2DE470C500023A97 /* HWSNavigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HWSNavigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04909D462DC23A660042647E /* HackingWithSwift-SwiftUISeries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HackingWithSwift-SwiftUISeries.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -153,9 +153,9 @@
 			path = iExpense;
 			sourceTree = "<group>";
 		};
-		048F544A2DE46F7800023A97 /* Navigation */ = {
+		048F545C2DE470C500023A97 /* HWSNavigation */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Navigation;
+			path = HWSNavigation;
 			sourceTree = "<group>";
 		};
 		04909D482DC23A660042647E /* HackingWithSwift-SwiftUISeries */ = {
@@ -215,7 +215,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		048F54462DE46F7800023A97 /* Frameworks */ = {
+		048F54582DE470C500023A97 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -226,12 +226,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				048F54512DE46F7800023A97 /* Navigation.framework in Frameworks */,
 				0450248D2DC24781002EDF49 /* GuessTheFlag.framework in Frameworks */,
 				045024782DC24129002EDF49 /* WeSplit.framework in Frameworks */,
 				0481F13F2DD7784000C02A87 /* Animations.framework in Frameworks */,
 				045024B42DC526FE002EDF49 /* BetterRest.framework in Frameworks */,
 				042B0F782DD60EFD000F33D9 /* WordScramble.framework in Frameworks */,
+				048F54632DE470C500023A97 /* HWSNavigation.framework in Frameworks */,
 				04551B612DDBA0AB004494C6 /* Moonshot.framework in Frameworks */,
 				0481F1652DDA0F7B00C02A87 /* iExpense.framework in Frameworks */,
 			);
@@ -251,7 +251,7 @@
 				0481F1382DD7784000C02A87 /* Animations */,
 				0481F15E2DDA0F7B00C02A87 /* iExpense */,
 				04551B5A2DDBA0AB004494C6 /* Moonshot */,
-				048F544A2DE46F7800023A97 /* Navigation */,
+				048F545C2DE470C500023A97 /* HWSNavigation */,
 				04909D472DC23A660042647E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -267,7 +267,7 @@
 				0481F1372DD7784000C02A87 /* Animations.framework */,
 				0481F15D2DDA0F7B00C02A87 /* iExpense.framework */,
 				04551B592DDBA0AB004494C6 /* Moonshot.framework */,
-				048F54492DE46F7800023A97 /* Navigation.framework */,
+				048F545B2DE470C500023A97 /* HWSNavigation.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -324,7 +324,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		048F54442DE46F7800023A97 /* Headers */ = {
+		048F54562DE470C500023A97 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -495,27 +495,27 @@
 			productReference = 0481F15D2DDA0F7B00C02A87 /* iExpense.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		048F54482DE46F7800023A97 /* Navigation */ = {
+		048F545A2DE470C500023A97 /* HWSNavigation */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 048F54532DE46F7800023A97 /* Build configuration list for PBXNativeTarget "Navigation" */;
+			buildConfigurationList = 048F54652DE470C500023A97 /* Build configuration list for PBXNativeTarget "HWSNavigation" */;
 			buildPhases = (
-				048F54442DE46F7800023A97 /* Headers */,
-				048F54452DE46F7800023A97 /* Sources */,
-				048F54462DE46F7800023A97 /* Frameworks */,
-				048F54472DE46F7800023A97 /* Resources */,
+				048F54562DE470C500023A97 /* Headers */,
+				048F54572DE470C500023A97 /* Sources */,
+				048F54582DE470C500023A97 /* Frameworks */,
+				048F54592DE470C500023A97 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				048F544A2DE46F7800023A97 /* Navigation */,
+				048F545C2DE470C500023A97 /* HWSNavigation */,
 			);
-			name = Navigation;
+			name = HWSNavigation;
 			packageProductDependencies = (
 			);
-			productName = Navigation;
-			productReference = 048F54492DE46F7800023A97 /* Navigation.framework */;
+			productName = HWSNavigation;
+			productReference = 048F545B2DE470C500023A97 /* HWSNavigation.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		04909D452DC23A660042647E /* HackingWithSwift-SwiftUISeries */ = {
@@ -537,7 +537,7 @@
 				0481F13E2DD7784000C02A87 /* PBXTargetDependency */,
 				0481F1642DDA0F7B00C02A87 /* PBXTargetDependency */,
 				04551B602DDBA0AB004494C6 /* PBXTargetDependency */,
-				048F54502DE46F7800023A97 /* PBXTargetDependency */,
+				048F54622DE470C500023A97 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				04909D482DC23A660042647E /* HackingWithSwift-SwiftUISeries */,
@@ -580,7 +580,7 @@
 					0481F15C2DDA0F7B00C02A87 = {
 						CreatedOnToolsVersion = 16.3;
 					};
-					048F54482DE46F7800023A97 = {
+					048F545A2DE470C500023A97 = {
 						CreatedOnToolsVersion = 16.3;
 					};
 					04909D452DC23A660042647E = {
@@ -610,7 +610,7 @@
 				0481F1362DD7784000C02A87 /* Animations */,
 				0481F15C2DDA0F7B00C02A87 /* iExpense */,
 				04551B582DDBA0AB004494C6 /* Moonshot */,
-				048F54482DE46F7800023A97 /* Navigation */,
+				048F545A2DE470C500023A97 /* HWSNavigation */,
 			);
 		};
 /* End PBXProject section */
@@ -665,7 +665,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		048F54472DE46F7800023A97 /* Resources */ = {
+		048F54592DE470C500023A97 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -731,7 +731,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		048F54452DE46F7800023A97 /* Sources */ = {
+		048F54572DE470C500023A97 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -783,10 +783,10 @@
 			target = 0481F15C2DDA0F7B00C02A87 /* iExpense */;
 			targetProxy = 0481F1632DDA0F7B00C02A87 /* PBXContainerItemProxy */;
 		};
-		048F54502DE46F7800023A97 /* PBXTargetDependency */ = {
+		048F54622DE470C500023A97 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 048F54482DE46F7800023A97 /* Navigation */;
-			targetProxy = 048F544F2DE46F7800023A97 /* PBXContainerItemProxy */;
+			target = 048F545A2DE470C500023A97 /* HWSNavigation */;
+			targetProxy = 048F54612DE470C500023A97 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1302,7 +1302,7 @@
 			};
 			name = Release;
 		};
-		048F54542DE46F7800023A97 /* Debug */ = {
+		048F54662DE470C500023A97 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
@@ -1324,7 +1324,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.daitensai.Navigation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daitensai.HWSNavigation;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1338,7 +1338,7 @@
 			};
 			name = Debug;
 		};
-		048F54552DE46F7800023A97 /* Release */ = {
+		048F54672DE470C500023A97 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
@@ -1360,7 +1360,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.daitensai.Navigation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daitensai.HWSNavigation;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1631,11 +1631,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		048F54532DE46F7800023A97 /* Build configuration list for PBXNativeTarget "Navigation" */ = {
+		048F54652DE470C500023A97 /* Build configuration list for PBXNativeTarget "HWSNavigation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				048F54542DE46F7800023A97 /* Debug */,
-				048F54552DE46F7800023A97 /* Release */,
+				048F54662DE470C500023A97 /* Debug */,
+				048F54672DE470C500023A97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,13 +1,13 @@
 //
-//  ContentView.swift
-//  Navigation
+//  HWSNavigationView.swift
+//  HWSNavigation
 //
 //  Created by Sylvan  on 26/05/2025.
 //
 
 import SwiftUI
 
-public struct ContentView: View {
+public struct HWSNavigationView: View {
     public init() {}
 
     public var body: some View {
@@ -16,5 +16,5 @@ public struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    HWSNavigationView()
 }
