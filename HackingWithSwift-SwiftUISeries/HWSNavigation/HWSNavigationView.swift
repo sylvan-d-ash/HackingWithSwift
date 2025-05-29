@@ -12,12 +12,24 @@ public struct HWSNavigationView: View {
 
     public var body: some View {
         NavigationStack {
-            List(0..<100) { i in
-                NavigationLink("Select \(i)", value: i)
+            List {
+                NavigationLink("Default Navigation with Destination") {
+                    DefaultNavigationDestinationView()
+                }
+                NavigationLink("Programmatic Navigation") {
+                    ProgrammaticNavigationView()
+                }
+                NavigationLink("Programmatic Navigation with NavigationPath") {
+                    ProgrammaticNavigationPathView()
+                }
+                NavigationLink("Back To Home") {
+                    BackToHomeView()
+                }
+                NavigationLink("Customizable Navigation Title") {
+                    CustomizableNavigationTitleView()
+                }
             }
-            .navigationDestination(for: Int.self) { selection in
-                Text("You selected \(selection)")
-            }
+            .navigationTitle("Navigation")
         }
     }
 }
