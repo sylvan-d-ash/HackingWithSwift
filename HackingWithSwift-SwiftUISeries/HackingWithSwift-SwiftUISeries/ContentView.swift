@@ -14,6 +14,7 @@ import Animations
 import iExpense
 import Moonshot
 import HWSNavigation
+import CupcakeCorner
 
 struct ContentView: View {
     var body: some View {
@@ -42,6 +43,9 @@ struct ContentView: View {
                 }
                 NavigationLink("Navigation") {
                     HWSNavigationView()
+                }
+                NavigationLink("Cupcake Corner") {
+                    CupcakeCornerView()
                 }
             }
             .navigationTitle("Hacking With Swift")

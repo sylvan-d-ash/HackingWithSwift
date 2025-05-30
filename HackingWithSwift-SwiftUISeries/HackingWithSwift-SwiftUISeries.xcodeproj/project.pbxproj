@@ -23,6 +23,8 @@
 		0481F1662DDA0F7B00C02A87 /* iExpense.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0481F15D2DDA0F7B00C02A87 /* iExpense.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		048F54632DE470C500023A97 /* HWSNavigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048F545B2DE470C500023A97 /* HWSNavigation.framework */; };
 		048F54642DE470C500023A97 /* HWSNavigation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 048F545B2DE470C500023A97 /* HWSNavigation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		04D928962DE92D57006AA823 /* CupcakeCorner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D9288E2DE92D56006AA823 /* CupcakeCorner.framework */; };
+		04D928972DE92D57006AA823 /* CupcakeCorner.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04D9288E2DE92D56006AA823 /* CupcakeCorner.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,13 @@
 			remoteGlobalIDString = 048F545A2DE470C500023A97;
 			remoteInfo = HWSNavigation;
 		};
+		04D928942DE92D56006AA823 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04909D3E2DC23A650042647E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04D9288D2DE92D56006AA823;
+			remoteInfo = CupcakeCorner;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -91,6 +100,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				04D928972DE92D57006AA823 /* CupcakeCorner.framework in Embed Frameworks */,
 				0450248E2DC24781002EDF49 /* GuessTheFlag.framework in Embed Frameworks */,
 				045024792DC24129002EDF49 /* WeSplit.framework in Embed Frameworks */,
 				0481F1402DD7784000C02A87 /* Animations.framework in Embed Frameworks */,
@@ -115,6 +125,7 @@
 		0481F15D2DDA0F7B00C02A87 /* iExpense.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iExpense.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		048F545B2DE470C500023A97 /* HWSNavigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HWSNavigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04909D462DC23A660042647E /* HackingWithSwift-SwiftUISeries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HackingWithSwift-SwiftUISeries.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D9288E2DE92D56006AA823 /* CupcakeCorner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CupcakeCorner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -161,6 +172,11 @@
 		04909D482DC23A660042647E /* HackingWithSwift-SwiftUISeries */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "HackingWithSwift-SwiftUISeries";
+			sourceTree = "<group>";
+		};
+		04D9288F2DE92D56006AA823 /* CupcakeCorner */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = CupcakeCorner;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -226,6 +242,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D928962DE92D57006AA823 /* CupcakeCorner.framework in Frameworks */,
 				0450248D2DC24781002EDF49 /* GuessTheFlag.framework in Frameworks */,
 				045024782DC24129002EDF49 /* WeSplit.framework in Frameworks */,
 				0481F13F2DD7784000C02A87 /* Animations.framework in Frameworks */,
@@ -234,6 +251,13 @@
 				048F54632DE470C500023A97 /* HWSNavigation.framework in Frameworks */,
 				04551B612DDBA0AB004494C6 /* Moonshot.framework in Frameworks */,
 				0481F1652DDA0F7B00C02A87 /* iExpense.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D9288B2DE92D56006AA823 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +276,7 @@
 				0481F15E2DDA0F7B00C02A87 /* iExpense */,
 				04551B5A2DDBA0AB004494C6 /* Moonshot */,
 				048F545C2DE470C500023A97 /* HWSNavigation */,
+				04D9288F2DE92D56006AA823 /* CupcakeCorner */,
 				04909D472DC23A660042647E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -268,6 +293,7 @@
 				0481F15D2DDA0F7B00C02A87 /* iExpense.framework */,
 				04551B592DDBA0AB004494C6 /* Moonshot.framework */,
 				048F545B2DE470C500023A97 /* HWSNavigation.framework */,
+				04D9288E2DE92D56006AA823 /* CupcakeCorner.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -325,6 +351,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		048F54562DE470C500023A97 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D928892DE92D56006AA823 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -538,6 +571,7 @@
 				0481F1642DDA0F7B00C02A87 /* PBXTargetDependency */,
 				04551B602DDBA0AB004494C6 /* PBXTargetDependency */,
 				048F54622DE470C500023A97 /* PBXTargetDependency */,
+				04D928952DE92D56006AA823 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				04909D482DC23A660042647E /* HackingWithSwift-SwiftUISeries */,
@@ -548,6 +582,29 @@
 			productName = "HackingWithSwift-SwiftUISeries";
 			productReference = 04909D462DC23A660042647E /* HackingWithSwift-SwiftUISeries.app */;
 			productType = "com.apple.product-type.application";
+		};
+		04D9288D2DE92D56006AA823 /* CupcakeCorner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04D928982DE92D57006AA823 /* Build configuration list for PBXNativeTarget "CupcakeCorner" */;
+			buildPhases = (
+				04D928892DE92D56006AA823 /* Headers */,
+				04D9288A2DE92D56006AA823 /* Sources */,
+				04D9288B2DE92D56006AA823 /* Frameworks */,
+				04D9288C2DE92D56006AA823 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				04D9288F2DE92D56006AA823 /* CupcakeCorner */,
+			);
+			name = CupcakeCorner;
+			packageProductDependencies = (
+			);
+			productName = CupcakeCorner;
+			productReference = 04D9288E2DE92D56006AA823 /* CupcakeCorner.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -586,6 +643,9 @@
 					04909D452DC23A660042647E = {
 						CreatedOnToolsVersion = 16.3;
 					};
+					04D9288D2DE92D56006AA823 = {
+						CreatedOnToolsVersion = 16.3;
+					};
 				};
 			};
 			buildConfigurationList = 04909D412DC23A650042647E /* Build configuration list for PBXProject "HackingWithSwift-SwiftUISeries" */;
@@ -611,6 +671,7 @@
 				0481F15C2DDA0F7B00C02A87 /* iExpense */,
 				04551B582DDBA0AB004494C6 /* Moonshot */,
 				048F545A2DE470C500023A97 /* HWSNavigation */,
+				04D9288D2DE92D56006AA823 /* CupcakeCorner */,
 			);
 		};
 /* End PBXProject section */
@@ -673,6 +734,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		04909D442DC23A660042647E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D9288C2DE92D56006AA823 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -745,6 +813,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		04D9288A2DE92D56006AA823 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -787,6 +862,11 @@
 			isa = PBXTargetDependency;
 			target = 048F545A2DE470C500023A97 /* HWSNavigation */;
 			targetProxy = 048F54612DE470C500023A97 /* PBXContainerItemProxy */;
+		};
+		04D928952DE92D56006AA823 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04D9288D2DE92D56006AA823 /* CupcakeCorner */;
+			targetProxy = 04D928942DE92D56006AA823 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1565,6 +1645,79 @@
 			};
 			name = Release;
 		};
+		04D928992DE92D57006AA823 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.daitensai.CupcakeCorner;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		04D9289A2DE92D57006AA823 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.daitensai.CupcakeCorner;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1654,6 +1807,15 @@
 			buildConfigurations = (
 				04909D532DC23A670042647E /* Debug */,
 				04909D542DC23A670042647E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04D928982DE92D57006AA823 /* Build configuration list for PBXNativeTarget "CupcakeCorner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04D928992DE92D57006AA823 /* Debug */,
+				04D9289A2DE92D57006AA823 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
