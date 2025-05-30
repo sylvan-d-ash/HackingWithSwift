@@ -25,6 +25,8 @@
 		048F54642DE470C500023A97 /* HWSNavigation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 048F545B2DE470C500023A97 /* HWSNavigation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		04D928962DE92D57006AA823 /* CupcakeCorner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D9288E2DE92D56006AA823 /* CupcakeCorner.framework */; };
 		04D928972DE92D57006AA823 /* CupcakeCorner.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04D9288E2DE92D56006AA823 /* CupcakeCorner.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		04FA03A02DEA12240034583B /* Bookworm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04FA03982DEA12240034583B /* Bookworm.framework */; };
+		04FA03A12DEA12240034583B /* Bookworm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04FA03982DEA12240034583B /* Bookworm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,13 @@
 			remoteGlobalIDString = 04D9288D2DE92D56006AA823;
 			remoteInfo = CupcakeCorner;
 		};
+		04FA039E2DEA12240034583B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04909D3E2DC23A650042647E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04FA03972DEA12240034583B;
+			remoteInfo = Bookworm;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -102,6 +111,7 @@
 			files = (
 				04D928972DE92D57006AA823 /* CupcakeCorner.framework in Embed Frameworks */,
 				0450248E2DC24781002EDF49 /* GuessTheFlag.framework in Embed Frameworks */,
+				04FA03A12DEA12240034583B /* Bookworm.framework in Embed Frameworks */,
 				045024792DC24129002EDF49 /* WeSplit.framework in Embed Frameworks */,
 				0481F1402DD7784000C02A87 /* Animations.framework in Embed Frameworks */,
 				045024B52DC526FE002EDF49 /* BetterRest.framework in Embed Frameworks */,
@@ -126,6 +136,7 @@
 		048F545B2DE470C500023A97 /* HWSNavigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HWSNavigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04909D462DC23A660042647E /* HackingWithSwift-SwiftUISeries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HackingWithSwift-SwiftUISeries.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D9288E2DE92D56006AA823 /* CupcakeCorner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CupcakeCorner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		04FA03982DEA12240034583B /* Bookworm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bookworm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -177,6 +188,11 @@
 		04D9288F2DE92D56006AA823 /* CupcakeCorner */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = CupcakeCorner;
+			sourceTree = "<group>";
+		};
+		04FA03992DEA12240034583B /* Bookworm */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Bookworm;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -244,6 +260,7 @@
 			files = (
 				04D928962DE92D57006AA823 /* CupcakeCorner.framework in Frameworks */,
 				0450248D2DC24781002EDF49 /* GuessTheFlag.framework in Frameworks */,
+				04FA03A02DEA12240034583B /* Bookworm.framework in Frameworks */,
 				045024782DC24129002EDF49 /* WeSplit.framework in Frameworks */,
 				0481F13F2DD7784000C02A87 /* Animations.framework in Frameworks */,
 				045024B42DC526FE002EDF49 /* BetterRest.framework in Frameworks */,
@@ -255,6 +272,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		04D9288B2DE92D56006AA823 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04FA03952DEA12240034583B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -277,6 +301,7 @@
 				04551B5A2DDBA0AB004494C6 /* Moonshot */,
 				048F545C2DE470C500023A97 /* HWSNavigation */,
 				04D9288F2DE92D56006AA823 /* CupcakeCorner */,
+				04FA03992DEA12240034583B /* Bookworm */,
 				04909D472DC23A660042647E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -294,6 +319,7 @@
 				04551B592DDBA0AB004494C6 /* Moonshot.framework */,
 				048F545B2DE470C500023A97 /* HWSNavigation.framework */,
 				04D9288E2DE92D56006AA823 /* CupcakeCorner.framework */,
+				04FA03982DEA12240034583B /* Bookworm.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -358,6 +384,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		04D928892DE92D56006AA823 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04FA03932DEA12240034583B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -572,6 +605,7 @@
 				04551B602DDBA0AB004494C6 /* PBXTargetDependency */,
 				048F54622DE470C500023A97 /* PBXTargetDependency */,
 				04D928952DE92D56006AA823 /* PBXTargetDependency */,
+				04FA039F2DEA12240034583B /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				04909D482DC23A660042647E /* HackingWithSwift-SwiftUISeries */,
@@ -604,6 +638,29 @@
 			);
 			productName = CupcakeCorner;
 			productReference = 04D9288E2DE92D56006AA823 /* CupcakeCorner.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		04FA03972DEA12240034583B /* Bookworm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04FA03A22DEA12240034583B /* Build configuration list for PBXNativeTarget "Bookworm" */;
+			buildPhases = (
+				04FA03932DEA12240034583B /* Headers */,
+				04FA03942DEA12240034583B /* Sources */,
+				04FA03952DEA12240034583B /* Frameworks */,
+				04FA03962DEA12240034583B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				04FA03992DEA12240034583B /* Bookworm */,
+			);
+			name = Bookworm;
+			packageProductDependencies = (
+			);
+			productName = Bookworm;
+			productReference = 04FA03982DEA12240034583B /* Bookworm.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -646,6 +703,9 @@
 					04D9288D2DE92D56006AA823 = {
 						CreatedOnToolsVersion = 16.3;
 					};
+					04FA03972DEA12240034583B = {
+						CreatedOnToolsVersion = 16.3;
+					};
 				};
 			};
 			buildConfigurationList = 04909D412DC23A650042647E /* Build configuration list for PBXProject "HackingWithSwift-SwiftUISeries" */;
@@ -672,6 +732,7 @@
 				04551B582DDBA0AB004494C6 /* Moonshot */,
 				048F545A2DE470C500023A97 /* HWSNavigation */,
 				04D9288D2DE92D56006AA823 /* CupcakeCorner */,
+				04FA03972DEA12240034583B /* Bookworm */,
 			);
 		};
 /* End PBXProject section */
@@ -741,6 +802,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		04D9288C2DE92D56006AA823 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04FA03962DEA12240034583B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -820,6 +888,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		04FA03942DEA12240034583B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -867,6 +942,11 @@
 			isa = PBXTargetDependency;
 			target = 04D9288D2DE92D56006AA823 /* CupcakeCorner */;
 			targetProxy = 04D928942DE92D56006AA823 /* PBXContainerItemProxy */;
+		};
+		04FA039F2DEA12240034583B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04FA03972DEA12240034583B /* Bookworm */;
+			targetProxy = 04FA039E2DEA12240034583B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1718,6 +1798,79 @@
 			};
 			name = Release;
 		};
+		04FA03A32DEA12240034583B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.daitensai.Bookworm;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		04FA03A42DEA12240034583B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.daitensai.Bookworm;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1816,6 +1969,15 @@
 			buildConfigurations = (
 				04D928992DE92D57006AA823 /* Debug */,
 				04D9289A2DE92D57006AA823 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04FA03A22DEA12240034583B /* Build configuration list for PBXNativeTarget "Bookworm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04FA03A32DEA12240034583B /* Debug */,
+				04FA03A42DEA12240034583B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
