@@ -8,21 +8,41 @@
 import SwiftUI
 
 public struct CupcakeCornerView: View {
+    @State private var order = Order()
+
     public init() {}
     
     public var body: some View {
-        AsyncImage(url: URL(string: "https://hws.dev/img/logo.png")) { phase in
-            if let image = phase.image {
-                image
-                    .resizable()
-                    .scaledToFit()
-            } else if phase.error != nil {
-                Text("Error loading image")
-            } else {
-                ProgressView()
+        NavigationStack {
+            Form {
+                Section {
+                    Picker("Select your cake", selection: $order.type) {
+                        ForEach(Order.types.indices, id: \.self) {
+                            Text(Order.types[$0])
+                        }
+                    }
+
+                    Stepper("Number of cakes: \(order.quantity)", value: $order.quantity, in: 1...10)
+                }
+
+                Section {
+                    Toggle("Any special request?", isOn: $order.specialRequestEnabled)
+
+                    if order.specialRequestEnabled {
+                        Toggle("Add extra frostings?", isOn: $order.extraFrosting)
+
+                        Toggle("Add extra sprinkles?", isOn: $order.addSprinkles)
+                    }
+                }
+
+                Section {
+                    NavigationLink("Delivery details") {
+                        AddressView(order: order)
+                    }
+                }
             }
+            .navigationTitle("Cupcake Corner")
         }
-        .frame(width: 200, height: 200)
     }
 }
 
