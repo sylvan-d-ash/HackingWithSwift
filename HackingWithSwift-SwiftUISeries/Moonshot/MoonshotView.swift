@@ -100,7 +100,7 @@ private struct ListLayoutView: View {
 }
 
 public struct MoonshotView: View {
-    @State private var isShowingGrid = false
+    @State private var isShowingGrid = true
 
     private let astronauts: [String: Astronaut] = Bundle(for: MoonshotBundleLocator.self).decode("astronauts.json")
     private let missions: [Mission] = Bundle(for: MoonshotBundleLocator.self).decode("missions.json")

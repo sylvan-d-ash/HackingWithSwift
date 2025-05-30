@@ -29,7 +29,7 @@ struct ContentView: View {
                 NavigationLink("Better Rest") {
                     BetterRestView()
                 }
-                NavigationLink("Better Rest") {
+                NavigationLink("Word Scamble") {
                     WordScrambleView()
                 }
                 NavigationLink("Animations") {
@@ -49,6 +49,7 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Hacking With Swift")
+            .preferredColorScheme(.dark)
         }
     }
 }
