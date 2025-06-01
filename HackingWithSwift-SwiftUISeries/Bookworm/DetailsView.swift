@@ -10,6 +10,10 @@ import SwiftUI
 private class BookwormBundleLocator {}
 
 struct DetailsView: View {
+    @Environment(\.modelContext) var modelContext
+    @Environment(\.dismiss) var dismiss
+    @State private var showingDeleteAlert = false
+
     let book: Book
 
     var body: some View {
@@ -42,6 +46,22 @@ struct DetailsView: View {
         .navigationTitle(book.title)
         .navigationBarTitleDisplayMode(.inline)
         .scrollBounceBehavior(.basedOnSize)
+        .alert("Delete book", isPresented: $showingDeleteAlert) {
+            Button("Delete", role: .destructive, action: deleteBook)
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("Are you sure you want to delete this book?")
+        }
+        .toolbar {
+            Button("Delete this book", systemImage: "trash") {
+                showingDeleteAlert = true
+            }
+        }
+    }
+
+    private func deleteBook() {
+        modelContext.delete(book)
+        dismiss()
     }
 }
 
