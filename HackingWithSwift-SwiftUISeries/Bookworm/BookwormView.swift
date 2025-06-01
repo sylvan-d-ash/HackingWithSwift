@@ -40,6 +40,7 @@ public struct BookwormView: View {
                         }
                     }
                 }
+                .onDelete(perform: deleteBooks)
             }
             .navigationTitle("Bookworm")
             .toolbar {
@@ -47,6 +48,10 @@ public struct BookwormView: View {
                     Button("Add New Book", systemImage: "plus") {
                         showingAddBookSheet = true
                     }
+                }
+
+                ToolbarItem(placement: .topBarLeading) {
+                    EditButton()
                 }
 
                 ToolbarItem(placement: .primaryAction) {
@@ -62,6 +67,13 @@ public struct BookwormView: View {
             .navigationDestination(for: Book.self) { book in
                 DetailsView(book: book)
             }
+        }
+    }
+
+    func deleteBooks(at offsets: IndexSet) {
+        for offset in offsets {
+            let bookToDelete = books[offset]
+            modelContext.delete(bookToDelete)
         }
     }
 }
