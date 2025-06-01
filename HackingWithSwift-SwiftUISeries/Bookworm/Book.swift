@@ -23,3 +23,15 @@ class Book {
         self.rating = rating
     }
 }
+
+public enum BookwormSwiftDataManager {
+    public static let shared: ModelContainer = {
+        do {
+            let schema = Schema([Book.self])
+            let config = ModelConfiguration()
+            return try ModelContainer(for: schema, configurations: config)
+        } catch {
+            fatalError("Failed to initialize ModelContainer: \(error.localizedDescription)")
+        }
+    }()
+}
