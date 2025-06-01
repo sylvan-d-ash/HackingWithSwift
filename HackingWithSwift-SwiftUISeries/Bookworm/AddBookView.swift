@@ -49,9 +49,18 @@ struct AddBookView: View {
                         modelContext.insert(book)
                     }
                 }
+                .disabled(validateInputs() == false)
             }
             .navigationTitle("Add New Book")
         }
+    }
+
+    private func validateInputs() -> Bool {
+        if title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty { return false }
+        if author.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty { return false }
+        if genre.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty { return false }
+        if review.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty { return false }
+        return true
     }
 }
 
