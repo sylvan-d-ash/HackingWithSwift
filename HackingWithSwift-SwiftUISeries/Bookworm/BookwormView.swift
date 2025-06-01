@@ -61,4 +61,5 @@ public struct BookwormView: View {
 
 #Preview {
     BookwormView()
+        .modelContainer(BookwormSwiftDataManager.previewContainer())
 }

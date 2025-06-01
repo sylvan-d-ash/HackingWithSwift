@@ -29,9 +29,23 @@ public enum BookwormSwiftDataManager {
         do {
             let schema = Schema([Book.self])
             let config = ModelConfiguration()
-            return try ModelContainer(for: schema, configurations: config)
+            return try ModelContainer(for: schema, configurations: [config])
         } catch {
             fatalError("Failed to initialize ModelContainer: \(error.localizedDescription)")
         }
     }()
+
+    public static func inMemory() throws -> ModelContainer {
+        let schema = Schema([Book.self])
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        return try ModelContainer(for: schema, configurations: [config])
+    }
+
+    public static func previewContainer() -> ModelContainer {
+        do {
+            return try inMemory()
+        } catch {
+            fatalError("Failed to create preview container: \(error.localizedDescription)")
+        }
+    }
 }
