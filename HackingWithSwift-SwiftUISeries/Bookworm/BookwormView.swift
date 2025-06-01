@@ -47,13 +47,16 @@ public struct BookwormView: View {
 
                 ToolbarItem(placement: .primaryAction) {
                     Button("Generate") {
-                        let book = Book(title: "Hello, World!", author: "Sylvan", genre: "Non-Fiction", review: "This is an example book.", rating: 4)
+                        let book = Book(title: "Hello, World!", author: "Sylvan", genre: "Poetry", review: "This is an example book.", rating: 4)
                         modelContext.insert(book)
                     }
                 }
             }
             .sheet(isPresented: $showingAddBookSheet) {
                 AddBookView()
+            }
+            .navigationDestination(for: Book.self) { book in
+                DetailsView(book: book)
             }
         }
     }
