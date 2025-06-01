@@ -19,18 +19,42 @@ public struct BookwormView: View {
 
     public var body: some View {
         NavigationStack {
-            Text("Count: \(books.count)")
-                .navigationTitle("Bookworm")
-                .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button("Add New Book", systemImage: "plus") {
-                            showingAddBookSheet = true
+            List {
+                ForEach(books) { book in
+                    NavigationLink(value: book) {
+                        HStack {
+                            EmojiRatingView(rating: book.rating)
+                                .font(.largeTitle)
+
+                            VStack(alignment: .leading) {
+                                Text(book.title)
+                                    .font(.headline)
+
+                                Text(book.author)
+                                    .foregroundStyle(.secondary)
+                            }
                         }
                     }
                 }
-                .sheet(isPresented: $showingAddBookSheet) {
-                    AddBookView()
+            }
+            .navigationTitle("Bookworm")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Add New Book", systemImage: "plus") {
+                        showingAddBookSheet = true
+                    }
                 }
+
+                ToolbarItem(placement: .primaryAction) {
+                    Button("Generate") {
+                        let book = Book(title: "Hello, World!", author: "Sylvan", genre: "Non-Fiction", review: "This is an example book.", rating: 4)
+                        modelContext.insert(book)
+                    }
+                }
+            }
+            .sheet(isPresented: $showingAddBookSheet) {
+                AddBookView()
+            }
         }
     }
 }
