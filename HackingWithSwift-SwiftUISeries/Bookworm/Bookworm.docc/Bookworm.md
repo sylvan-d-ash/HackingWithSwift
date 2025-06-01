@@ -1,10 +1,11 @@
 # ``Bookworm``
 
-<!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
+An app to track which books you've read, and what you thought of them.
 
 ## Overview
 
-<!--@START_MENU_TOKEN@-->Text<!--@END_MENU_TOKEN@-->
+The app introduces SwiftData, as well as creating a custom user interface component - a star rating widget
+where the user can tap to leave a score for each book.
 
 ## Topics
 
