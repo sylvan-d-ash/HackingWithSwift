@@ -6,12 +6,32 @@
 //
 
 import SwiftUI
+import SwiftData
 
 public struct BookwormView: View {
+    @Environment(\.modelContext) var modelContext
+
+    @Query var books: [Book]
+
+    @State private var showingAddBookSheet = false
+
     public init() {}
 
     public var body: some View {
-        Text("Hello universe!")
+        NavigationStack {
+            Text("Count: \(books.count)")
+                .navigationTitle("Bookworm")
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button("Add New Book", systemImage: "plus") {
+                            showingAddBookSheet = true
+                        }
+                    }
+                }
+                .sheet(isPresented: $showingAddBookSheet) {
+                    AddBookView()
+                }
+        }
     }
 }
 
