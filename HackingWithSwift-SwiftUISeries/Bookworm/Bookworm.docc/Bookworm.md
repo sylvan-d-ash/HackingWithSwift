@@ -9,6 +9,14 @@ where the user can tap to leave a score for each book.
 
 ## Topics
 
-### <!--@START_MENU_TOKEN@-->Group<!--@END_MENU_TOKEN@-->
+### Artwork
 
-- <!--@START_MENU_TOKEN@-->``Symbol``<!--@END_MENU_TOKEN@-->
+The app incorporates artwork from [Unsplash](https://unsplash.com) from the following authors to represent each book category
+
+- Ryan Wallace
+- Eugene Triguba
+- Jamie Street
+- Alvaro Serrano
+- Joao Silas
+- David Dilbert
+- Casey Horner
