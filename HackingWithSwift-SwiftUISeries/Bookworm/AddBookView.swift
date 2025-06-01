@@ -10,6 +10,7 @@ import SwiftData
 
 struct AddBookView: View {
     @Environment(\.modelContext) var modelContext
+    @Environment(\.dismiss) var dismiss
 
     @State private var title: String = ""
     @State private var author: String = ""
@@ -47,6 +48,7 @@ struct AddBookView: View {
                     Button("Save") {
                         let book = Book(title: title, author: author, genre: genre, review: review, rating: rating)
                         modelContext.insert(book)
+                        dismiss()
                     }
                 }
                 .disabled(validateInputs() == false)
