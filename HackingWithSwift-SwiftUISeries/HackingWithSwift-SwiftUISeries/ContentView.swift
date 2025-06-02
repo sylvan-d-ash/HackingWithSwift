@@ -16,6 +16,7 @@ import Moonshot
 import HWSNavigation
 import CupcakeCorner
 import Bookworm
+import Instafilter
 
 struct ContentView: View {
     var body: some View {
@@ -50,6 +51,9 @@ struct ContentView: View {
                 }
                 NavigationLink("Bookworm") {
                     BookwormView()
+                }
+                NavigationLink("Instafilter") {
+                    InstafilterView()
                 }
             }
             .navigationTitle("Hacking With Swift")
