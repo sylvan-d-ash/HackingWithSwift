@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		042B0F782DD60EFD000F33D9 /* WordScramble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042B0F702DD60EFD000F33D9 /* WordScramble.framework */; };
 		042B0F792DD60EFD000F33D9 /* WordScramble.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 042B0F702DD60EFD000F33D9 /* WordScramble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0433527B2DED8D4E005B361C /* Instafilter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043352732DED8D4E005B361C /* Instafilter.framework */; };
+		0433527C2DED8D4E005B361C /* Instafilter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 043352732DED8D4E005B361C /* Instafilter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		045024782DC24129002EDF49 /* WeSplit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045024702DC24129002EDF49 /* WeSplit.framework */; };
 		045024792DC24129002EDF49 /* WeSplit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 045024702DC24129002EDF49 /* WeSplit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0450248D2DC24781002EDF49 /* GuessTheFlag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045024852DC24781002EDF49 /* GuessTheFlag.framework */; };
@@ -36,6 +38,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 042B0F6F2DD60EFD000F33D9;
 			remoteInfo = WordScramble;
+		};
+		043352792DED8D4E005B361C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04909D3E2DC23A650042647E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 043352722DED8D4E005B361C;
+			remoteInfo = Instafilter;
 		};
 		045024762DC24129002EDF49 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -111,6 +120,7 @@
 			files = (
 				04D928972DE92D57006AA823 /* CupcakeCorner.framework in Embed Frameworks */,
 				0450248E2DC24781002EDF49 /* GuessTheFlag.framework in Embed Frameworks */,
+				0433527C2DED8D4E005B361C /* Instafilter.framework in Embed Frameworks */,
 				04FA03A12DEA12240034583B /* Bookworm.framework in Embed Frameworks */,
 				045024792DC24129002EDF49 /* WeSplit.framework in Embed Frameworks */,
 				0481F1402DD7784000C02A87 /* Animations.framework in Embed Frameworks */,
@@ -127,6 +137,7 @@
 
 /* Begin PBXFileReference section */
 		042B0F702DD60EFD000F33D9 /* WordScramble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WordScramble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		043352732DED8D4E005B361C /* Instafilter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Instafilter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		045024702DC24129002EDF49 /* WeSplit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeSplit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		045024852DC24781002EDF49 /* GuessTheFlag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GuessTheFlag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		045024AC2DC526FE002EDF49 /* BetterRest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BetterRest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +154,11 @@
 		042B0F712DD60EFD000F33D9 /* WordScramble */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = WordScramble;
+			sourceTree = "<group>";
+		};
+		043352742DED8D4E005B361C /* Instafilter */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Instafilter;
 			sourceTree = "<group>";
 		};
 		045024712DC24129002EDF49 /* WeSplit */ = {
@@ -205,6 +221,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		043352702DED8D4E005B361C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0450246D2DC24129002EDF49 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -260,6 +283,7 @@
 			files = (
 				04D928962DE92D57006AA823 /* CupcakeCorner.framework in Frameworks */,
 				0450248D2DC24781002EDF49 /* GuessTheFlag.framework in Frameworks */,
+				0433527B2DED8D4E005B361C /* Instafilter.framework in Frameworks */,
 				04FA03A02DEA12240034583B /* Bookworm.framework in Frameworks */,
 				045024782DC24129002EDF49 /* WeSplit.framework in Frameworks */,
 				0481F13F2DD7784000C02A87 /* Animations.framework in Frameworks */,
@@ -302,6 +326,7 @@
 				048F545C2DE470C500023A97 /* HWSNavigation */,
 				04D9288F2DE92D56006AA823 /* CupcakeCorner */,
 				04FA03992DEA12240034583B /* Bookworm */,
+				043352742DED8D4E005B361C /* Instafilter */,
 				04909D472DC23A660042647E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -320,6 +345,7 @@
 				048F545B2DE470C500023A97 /* HWSNavigation.framework */,
 				04D9288E2DE92D56006AA823 /* CupcakeCorner.framework */,
 				04FA03982DEA12240034583B /* Bookworm.framework */,
+				043352732DED8D4E005B361C /* Instafilter.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -328,6 +354,13 @@
 
 /* Begin PBXHeadersBuildPhase section */
 		042B0F6B2DD60EFD000F33D9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0433526E2DED8D4E005B361C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -421,6 +454,29 @@
 			);
 			productName = WordScramble;
 			productReference = 042B0F702DD60EFD000F33D9 /* WordScramble.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		043352722DED8D4E005B361C /* Instafilter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0433527F2DED8D4E005B361C /* Build configuration list for PBXNativeTarget "Instafilter" */;
+			buildPhases = (
+				0433526E2DED8D4E005B361C /* Headers */,
+				0433526F2DED8D4E005B361C /* Sources */,
+				043352702DED8D4E005B361C /* Frameworks */,
+				043352712DED8D4E005B361C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				043352742DED8D4E005B361C /* Instafilter */,
+			);
+			name = Instafilter;
+			packageProductDependencies = (
+			);
+			productName = Instafilter;
+			productReference = 043352732DED8D4E005B361C /* Instafilter.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		0450246F2DC24129002EDF49 /* WeSplit */ = {
@@ -606,6 +662,7 @@
 				048F54622DE470C500023A97 /* PBXTargetDependency */,
 				04D928952DE92D56006AA823 /* PBXTargetDependency */,
 				04FA039F2DEA12240034583B /* PBXTargetDependency */,
+				0433527A2DED8D4E005B361C /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				04909D482DC23A660042647E /* HackingWithSwift-SwiftUISeries */,
@@ -676,6 +733,9 @@
 					042B0F6F2DD60EFD000F33D9 = {
 						CreatedOnToolsVersion = 16.3;
 					};
+					043352722DED8D4E005B361C = {
+						CreatedOnToolsVersion = 16.3;
+					};
 					0450246F2DC24129002EDF49 = {
 						CreatedOnToolsVersion = 16.3;
 					};
@@ -733,12 +793,20 @@
 				048F545A2DE470C500023A97 /* HWSNavigation */,
 				04D9288D2DE92D56006AA823 /* CupcakeCorner */,
 				04FA03972DEA12240034583B /* Bookworm */,
+				043352722DED8D4E005B361C /* Instafilter */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		042B0F6E2DD60EFD000F33D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		043352712DED8D4E005B361C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -825,6 +893,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0433526F2DED8D4E005B361C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0450246C2DC24129002EDF49 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -902,6 +977,11 @@
 			isa = PBXTargetDependency;
 			target = 042B0F6F2DD60EFD000F33D9 /* WordScramble */;
 			targetProxy = 042B0F762DD60EFD000F33D9 /* PBXContainerItemProxy */;
+		};
+		0433527A2DED8D4E005B361C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 043352722DED8D4E005B361C /* Instafilter */;
+			targetProxy = 043352792DED8D4E005B361C /* PBXContainerItemProxy */;
 		};
 		045024772DC24129002EDF49 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1010,6 +1090,79 @@
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daitensai.WordScramble;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		0433527D2DED8D4E005B361C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.daitensai.Instafilter;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0433527E2DED8D4E005B361C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.daitensai.Instafilter;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1879,6 +2032,15 @@
 			buildConfigurations = (
 				042B0F7B2DD60EFD000F33D9 /* Debug */,
 				042B0F7C2DD60EFD000F33D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0433527F2DED8D4E005B361C /* Build configuration list for PBXNativeTarget "Instafilter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0433527D2DED8D4E005B361C /* Debug */,
+				0433527E2DED8D4E005B361C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
