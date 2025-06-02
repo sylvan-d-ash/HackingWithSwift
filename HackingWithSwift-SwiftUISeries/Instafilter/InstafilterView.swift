@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 public struct InstafilterView: View {
     @State private var processedImage: Image?
     @State private var filterIntensity: Double = 0.5
+    @State private var selectedItem: PhotosPickerItem?
 
     public init() {}
 
@@ -18,13 +20,16 @@ public struct InstafilterView: View {
             VStack {
                 Spacer()
 
-                if let processedImage {
-                    processedImage
-                        .resizable()
-                        .scaledToFit()
-                } else {
-                    ContentUnavailableView("No picture", systemImage: "photo.badge.plus", description: Text("Tap to import a photo"))
+                PhotosPicker(selection: $selectedItem) {
+                    if let processedImage {
+                        processedImage
+                            .resizable()
+                            .scaledToFit()
+                    } else {
+                        ContentUnavailableView("No picture", systemImage: "photo.badge.plus", description: Text("Tap to import a photo"))
+                    }
                 }
+                .onChange(of: selectedItem, loadImage)
 
                 Spacer()
 
@@ -50,4 +55,15 @@ public struct InstafilterView: View {
     private func changeFilter() {
         //
     }
+
+    private func loadImage() {
+        Task {
+            guard let imageData = try await selectedItem?.loadTransferable(type: Data.self) else { return }
+            guard let inputImage = UIImage(data: imageData) else { return }
+        }
+    }
+}
+
+#Preview {
+    InstafilterView()
 }
