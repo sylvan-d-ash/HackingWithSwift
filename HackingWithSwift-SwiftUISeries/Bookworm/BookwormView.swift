@@ -24,6 +24,24 @@ public struct BookwormView: View {
     public var body: some View {
         NavigationStack {
             List {
+                if books.isEmpty {
+                    ContentUnavailableView {
+                        Label("No books!", systemImage: "book")
+                    } description: {
+                        Text("You haven't added any books yet")
+                    } actions: {
+                        Button("Add New Book") { showingAddBookSheet = true }
+                            .buttonStyle(.bordered)
+
+                        Button("Autogenerate Book") {
+                            let book = Book(title: "Hello, Universe!", author: "Winter", genre: "Fantasy", review: "This is the worst book ever!", rating: 1)
+                            modelContext.insert(book)
+                        }
+                        .buttonStyle(.bordered)
+                    }
+                    .buttonStyle(.plain)
+                }
+
                 ForEach(books) { book in
                     NavigationLink(value: book) {
                         HStack {
