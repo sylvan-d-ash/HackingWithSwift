@@ -11,6 +11,8 @@
 		042B0F792DD60EFD000F33D9 /* WordScramble.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 042B0F702DD60EFD000F33D9 /* WordScramble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0433527B2DED8D4E005B361C /* Instafilter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043352732DED8D4E005B361C /* Instafilter.framework */; };
 		0433527C2DED8D4E005B361C /* Instafilter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 043352732DED8D4E005B361C /* Instafilter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		043353912DEE1DF1005B361C /* Bucketlist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043353892DEE1DF1005B361C /* Bucketlist.framework */; };
+		043353922DEE1DF1005B361C /* Bucketlist.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 043353892DEE1DF1005B361C /* Bucketlist.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		045024782DC24129002EDF49 /* WeSplit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045024702DC24129002EDF49 /* WeSplit.framework */; };
 		045024792DC24129002EDF49 /* WeSplit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 045024702DC24129002EDF49 /* WeSplit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0450248D2DC24781002EDF49 /* GuessTheFlag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045024852DC24781002EDF49 /* GuessTheFlag.framework */; };
@@ -45,6 +47,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 043352722DED8D4E005B361C;
 			remoteInfo = Instafilter;
+		};
+		0433538F2DEE1DF1005B361C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04909D3E2DC23A650042647E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 043353882DEE1DF1005B361C;
+			remoteInfo = Bucketlist;
 		};
 		045024762DC24129002EDF49 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -128,6 +137,7 @@
 				042B0F792DD60EFD000F33D9 /* WordScramble.framework in Embed Frameworks */,
 				048F54642DE470C500023A97 /* HWSNavigation.framework in Embed Frameworks */,
 				04551B622DDBA0AB004494C6 /* Moonshot.framework in Embed Frameworks */,
+				043353922DEE1DF1005B361C /* Bucketlist.framework in Embed Frameworks */,
 				0481F1662DDA0F7B00C02A87 /* iExpense.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -138,6 +148,7 @@
 /* Begin PBXFileReference section */
 		042B0F702DD60EFD000F33D9 /* WordScramble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WordScramble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		043352732DED8D4E005B361C /* Instafilter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Instafilter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		043353892DEE1DF1005B361C /* Bucketlist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bucketlist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		045024702DC24129002EDF49 /* WeSplit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeSplit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		045024852DC24781002EDF49 /* GuessTheFlag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GuessTheFlag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		045024AC2DC526FE002EDF49 /* BetterRest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BetterRest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +170,11 @@
 		043352742DED8D4E005B361C /* Instafilter */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Instafilter;
+			sourceTree = "<group>";
+		};
+		0433538A2DEE1DF1005B361C /* Bucketlist */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Bucketlist;
 			sourceTree = "<group>";
 		};
 		045024712DC24129002EDF49 /* WeSplit */ = {
@@ -228,6 +244,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		043353862DEE1DF1005B361C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0450246D2DC24129002EDF49 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -291,6 +314,7 @@
 				042B0F782DD60EFD000F33D9 /* WordScramble.framework in Frameworks */,
 				048F54632DE470C500023A97 /* HWSNavigation.framework in Frameworks */,
 				04551B612DDBA0AB004494C6 /* Moonshot.framework in Frameworks */,
+				043353912DEE1DF1005B361C /* Bucketlist.framework in Frameworks */,
 				0481F1652DDA0F7B00C02A87 /* iExpense.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,6 +351,7 @@
 				04D9288F2DE92D56006AA823 /* CupcakeCorner */,
 				04FA03992DEA12240034583B /* Bookworm */,
 				043352742DED8D4E005B361C /* Instafilter */,
+				0433538A2DEE1DF1005B361C /* Bucketlist */,
 				04909D472DC23A660042647E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -346,6 +371,7 @@
 				04D9288E2DE92D56006AA823 /* CupcakeCorner.framework */,
 				04FA03982DEA12240034583B /* Bookworm.framework */,
 				043352732DED8D4E005B361C /* Instafilter.framework */,
+				043353892DEE1DF1005B361C /* Bucketlist.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -361,6 +387,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		0433526E2DED8D4E005B361C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		043353842DEE1DF1005B361C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -477,6 +510,29 @@
 			);
 			productName = Instafilter;
 			productReference = 043352732DED8D4E005B361C /* Instafilter.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		043353882DEE1DF1005B361C /* Bucketlist */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 043353952DEE1DF1005B361C /* Build configuration list for PBXNativeTarget "Bucketlist" */;
+			buildPhases = (
+				043353842DEE1DF1005B361C /* Headers */,
+				043353852DEE1DF1005B361C /* Sources */,
+				043353862DEE1DF1005B361C /* Frameworks */,
+				043353872DEE1DF1005B361C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				0433538A2DEE1DF1005B361C /* Bucketlist */,
+			);
+			name = Bucketlist;
+			packageProductDependencies = (
+			);
+			productName = Bucketlist;
+			productReference = 043353892DEE1DF1005B361C /* Bucketlist.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		0450246F2DC24129002EDF49 /* WeSplit */ = {
@@ -663,6 +719,7 @@
 				04D928952DE92D56006AA823 /* PBXTargetDependency */,
 				04FA039F2DEA12240034583B /* PBXTargetDependency */,
 				0433527A2DED8D4E005B361C /* PBXTargetDependency */,
+				043353902DEE1DF1005B361C /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				04909D482DC23A660042647E /* HackingWithSwift-SwiftUISeries */,
@@ -736,6 +793,9 @@
 					043352722DED8D4E005B361C = {
 						CreatedOnToolsVersion = 16.3;
 					};
+					043353882DEE1DF1005B361C = {
+						CreatedOnToolsVersion = 16.3;
+					};
 					0450246F2DC24129002EDF49 = {
 						CreatedOnToolsVersion = 16.3;
 					};
@@ -794,6 +854,7 @@
 				04D9288D2DE92D56006AA823 /* CupcakeCorner */,
 				04FA03972DEA12240034583B /* Bookworm */,
 				043352722DED8D4E005B361C /* Instafilter */,
+				043353882DEE1DF1005B361C /* Bucketlist */,
 			);
 		};
 /* End PBXProject section */
@@ -807,6 +868,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		043352712DED8D4E005B361C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		043353872DEE1DF1005B361C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -900,6 +968,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		043353852DEE1DF1005B361C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0450246C2DC24129002EDF49 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -982,6 +1057,11 @@
 			isa = PBXTargetDependency;
 			target = 043352722DED8D4E005B361C /* Instafilter */;
 			targetProxy = 043352792DED8D4E005B361C /* PBXContainerItemProxy */;
+		};
+		043353902DEE1DF1005B361C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 043353882DEE1DF1005B361C /* Bucketlist */;
+			targetProxy = 0433538F2DEE1DF1005B361C /* PBXContainerItemProxy */;
 		};
 		045024772DC24129002EDF49 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1163,6 +1243,79 @@
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daitensai.Instafilter;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		043353932DEE1DF1005B361C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.daitensai.Bucketlist;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		043353942DEE1DF1005B361C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.daitensai.Bucketlist;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -2041,6 +2194,15 @@
 			buildConfigurations = (
 				0433527D2DED8D4E005B361C /* Debug */,
 				0433527E2DED8D4E005B361C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		043353952DEE1DF1005B361C /* Build configuration list for PBXNativeTarget "Bucketlist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				043353932DEE1DF1005B361C /* Debug */,
+				043353942DEE1DF1005B361C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
