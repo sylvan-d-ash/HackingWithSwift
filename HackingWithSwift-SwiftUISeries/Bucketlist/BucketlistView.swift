@@ -10,6 +10,7 @@ import MapKit
 
 public struct BucketlistView: View {
     @State private var locations = [Location]()
+    @State private var selectedPlace: Location?
 
     private let startPosition = MapCameraPosition.region(
         MKCoordinateRegion(
@@ -31,11 +32,17 @@ public struct BucketlistView: View {
                             .frame(width: 32, height: 32)
                             .background(.white)
                             .clipShape(.circle)
+                            .onLongPressGesture {
+                                selectedPlace = location
+                            }
                     }
                 }
             }
             .onTapGesture { position in
                 mapTapped(at: position, proxy: proxy)
+            }
+            .sheet(item: $selectedPlace) { place in
+                EditView(location: place)
             }
         }
     }
