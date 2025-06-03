@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreLocation
+import LocalAuthentication
 
 extension BucketlistView {
     @Observable
@@ -15,6 +16,7 @@ extension BucketlistView {
 
         private(set) var locations: [Location]
         var selectedPlace: Location?
+        var isUnlocked = false
 
         init() {
             do {
@@ -22,6 +24,25 @@ extension BucketlistView {
                 locations = try JSONDecoder().decode([Location].self, from: data)
             } catch {
                 locations = []
+            }
+        }
+
+        func authenticate() {
+            let context = LAContext()
+            var error: NSError?
+
+            if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+                let reason = "Please authenticate yourself to unlock your places."
+
+                context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authError in
+                    if success {
+                        self.isUnlocked = true
+                    } else if let authError {
+                        print("AuthError: \(authError.localizedDescription)")
+                    }
+                }
+            } else {
+                print("Biometrics not supported!")
             }
         }
 
