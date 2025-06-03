@@ -20,6 +20,9 @@ struct EditView: View {
     @State private var name: String
     @State private var description: String
 
+    @State private var loadingState: LoadingState = .loading
+    @State private var pages: [Page] = []
+
     init(location: Location, onSave: @escaping (Location) -> Void) {
         self.location = location
         self.onSave = onSave
@@ -33,6 +36,26 @@ struct EditView: View {
                 Section {
                     TextField("Name of the place", text: $name)
                     TextField("Description", text: $description)
+                }
+
+                Section("Interesting Places Nearby") {
+                    switch loadingState {
+                    case .loading:
+                        ProgressView()
+                            .frame(maxWidth: .infinity)
+                    case .loaded:
+                        ForEach(pages, id: \.pageid) { page in
+                            /*@START_MENU_TOKEN@*/Text(page.title)/*@END_MENU_TOKEN@*/
+                                .font(.headline)
+                            + Text(": ") +
+                            Text("Page description here")
+                                .italic()
+                        }
+                    case .failed:
+                        Text("Please try again later")
+                            .font(.caption)
+                            .foregroundStyle(.red)
+                    }
                 }
             }
             .navigationTitle("Details of the place")
