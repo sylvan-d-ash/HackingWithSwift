@@ -9,8 +9,7 @@ import SwiftUI
 import MapKit
 
 public struct BucketlistView: View {
-    @State private var locations = [Location]()
-    @State private var selectedPlace: Location?
+    @State private var viewModel = ViewModel()
 
     private let startPosition = MapCameraPosition.region(
         MKCoordinateRegion(
@@ -24,7 +23,7 @@ public struct BucketlistView: View {
     public var body: some View {
         MapReader { proxy in
             Map(initialPosition: startPosition) {
-                ForEach(locations) { location in
+                ForEach(viewModel.locations) { location in
                     Annotation(location.name, coordinate: location.coordinate) {
                         Image(systemName: "star.circle")
                             .resizable()
@@ -33,30 +32,21 @@ public struct BucketlistView: View {
                             .background(.white)
                             .clipShape(.circle)
                             .onLongPressGesture {
-                                selectedPlace = location
+                                viewModel.selectedPlace = location
                             }
                     }
                 }
             }
             .onTapGesture { position in
-                mapTapped(at: position, proxy: proxy)
+                guard let coordinate = proxy.convert(position, from: .local) else { return }
+                viewModel.addLocation(at: coordinate)
             }
-            .sheet(item: $selectedPlace) { place in
-                EditView(location: place) { newLocation in
-                    guard let index = locations.firstIndex(of: place) else { return }
-                    locations[index] = newLocation
+            .sheet(item: $viewModel.selectedPlace) { place in
+                EditView(location: place) {
+                    viewModel.update(location: $0)
                 }
             }
         }
-    }
-
-    private func mapTapped(at position: CGPoint, proxy: MapProxy) {
-        guard let coordinate = proxy.convert(position, from: .local) else { return }
-        print("Coordinates: \(coordinate)")
-        let location = Location(id: UUID(), name: "New location", description: "", latitude: coordinate.latitude, longitude: coordinate.longitude)
-        locations.append(location)
-
-        selectedPlace = location
     }
 }
 
