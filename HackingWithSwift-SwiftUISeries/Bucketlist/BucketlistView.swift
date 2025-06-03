@@ -42,7 +42,10 @@ public struct BucketlistView: View {
                 mapTapped(at: position, proxy: proxy)
             }
             .sheet(item: $selectedPlace) { place in
-                EditView(location: place)
+                EditView(location: place) { newLocation in
+                    guard let index = locations.firstIndex(of: place) else { return }
+                    locations[index] = newLocation
+                }
             }
         }
     }
