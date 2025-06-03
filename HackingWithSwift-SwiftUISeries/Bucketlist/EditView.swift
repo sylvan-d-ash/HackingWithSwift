@@ -48,7 +48,7 @@ struct EditView: View {
                             /*@START_MENU_TOKEN@*/Text(page.title)/*@END_MENU_TOKEN@*/
                                 .font(.headline)
                             + Text(": ") +
-                            Text("Page description here")
+                            Text(page.description)
                                 .italic()
                         }
                     case .failed:
@@ -69,6 +69,27 @@ struct EditView: View {
                     dismiss()
                 }
             }
+            .task {
+                await fetchNearbyPlaces()
+            }
+        }
+    }
+
+    private func fetchNearbyPlaces() async {
+        let urlString = "https://en.wikipedia.org/w/api.php?ggscoord=\(location.latitude)%7C\(location.longitude)&action=query&prop=coordinates%7Cpageimages%7Cpageterms&colimit=50&piprop=thumbnail&pithumbsize=500&pilimit=50&wbptterms=description&generator=geosearch&ggsradius=10000&ggslimit=50&format=json"
+
+        guard let url = URL(string: urlString) else {
+            print("Bad url: \(urlString)")
+            return
+        }
+
+        do {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            let items = try JSONDecoder().decode(Results.self, from: data)
+            pages = items.query.pages.values.sorted()
+            loadingState = .loaded
+        } catch {
+            loadingState = .failed
         }
     }
 }
