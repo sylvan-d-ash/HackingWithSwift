@@ -9,6 +9,8 @@ import SwiftUI
 import MapKit
 
 public struct BucketlistView: View {
+    @State private var locations = [Location]()
+
     private let startPosition = MapCameraPosition.region(
         MKCoordinateRegion(
             center: CLLocationCoordinate2D(latitude: -1, longitude: 36.8),
@@ -20,14 +22,21 @@ public struct BucketlistView: View {
 
     public var body: some View {
         MapReader { proxy in
-            Map(initialPosition: startPosition)
-                .onTapGesture { position in
-                    print("Tapped at \(position)")
-                    if let coordinate = proxy.convert(position, from: .local) {
-                        print("Coordinate: (\(coordinate.latitude), \(coordinate.longitude))")
-                    }
+            Map(initialPosition: startPosition) {
+                ForEach(locations) { location in
+                    Marker(location.name, coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude))
                 }
+            }
+            .onTapGesture { position in
+                mapTapped(at: position, proxy: proxy)
+            }
         }
+    }
+
+    private func mapTapped(at position: CGPoint, proxy: MapProxy) {
+        guard let coordinate = proxy.convert(position, from: .local) else { return }
+        let location = Location(id: UUID(), name: "New location", description: "", latitude: coordinate.latitude, longitude: coordinate.longitude)
+        locations.append(location)
     }
 }
 
