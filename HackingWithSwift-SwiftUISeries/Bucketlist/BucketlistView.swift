@@ -24,7 +24,14 @@ public struct BucketlistView: View {
         MapReader { proxy in
             Map(initialPosition: startPosition) {
                 ForEach(locations) { location in
-                    Marker(location.name, coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude))
+                    Annotation(location.name, coordinate: location.coordinate) {
+                        Image(systemName: "star.circle")
+                            .resizable()
+                            .foregroundStyle(.blue)
+                            .frame(width: 32, height: 32)
+                            .background(.white)
+                            .clipShape(.circle)
+                    }
                 }
             }
             .onTapGesture { position in
@@ -35,6 +42,7 @@ public struct BucketlistView: View {
 
     private func mapTapped(at position: CGPoint, proxy: MapProxy) {
         guard let coordinate = proxy.convert(position, from: .local) else { return }
+        print("Coordinates: \(coordinate)")
         let location = Location(id: UUID(), name: "New location", description: "", latitude: coordinate.latitude, longitude: coordinate.longitude)
         locations.append(location)
     }
