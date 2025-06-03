@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+enum LoadingState {
+    case loading, loaded, failed
+}
+
 struct EditView: View {
     private var location: Location
     private var onSave: (Location) -> Void

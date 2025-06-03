@@ -55,6 +55,8 @@ public struct BucketlistView: View {
         print("Coordinates: \(coordinate)")
         let location = Location(id: UUID(), name: "New location", description: "", latitude: coordinate.latitude, longitude: coordinate.longitude)
         locations.append(location)
+
+        selectedPlace = location
     }
 }
 
