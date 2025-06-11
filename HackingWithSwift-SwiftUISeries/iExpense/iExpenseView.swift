@@ -51,6 +51,10 @@ public struct iExpenseView: View {
 
                     Text(item.amount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                 }
+                // NOTE: .ignore is default so it's not a must to specify it
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel("\(item.name) \(item.amount)")
+                .accessibilityHint(item.type)
             }
             .onDelete(perform: remoteItem)
         }
