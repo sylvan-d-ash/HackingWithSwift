@@ -15,6 +15,7 @@ struct ImageView: View {
     var body: some View {
         Image(name, bundle: Bundle(for: MoonshotBundleLocator.self))
             .resizable()
+            .accessibilityHidden(true)
     }
 }
 

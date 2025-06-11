@@ -82,29 +82,36 @@ struct MissionView: View {
                         width * 0.6
                     }
                     .padding(.top)
+                    .accessibilityHidden(true)
 
                 Text(mission.formattedLaunchDate)
                     .font(.caption)
                     .padding()
 
-                VStack(alignment: .leading) {
-                    Text("Mission Highlights")
-                        .font(.title.bold())
-                        .padding(.bottom, 5)
-
+                VStack(spacing: 0) {
                     CustomDivider()
 
-                    Text(mission.description)
+                    HStack {
+                        Text("Crew")
+                            .font(.title.bold())
 
-                    CustomDivider()
-
-                    Text("Crew")
-                        .font(.title.bold())
-                        .padding(.bottom, 5)
+                        Spacer()
+                    }
                 }
                 .padding(.horizontal)
 
                 CrewMembersView(crew: crew)
+
+                VStack(alignment: .leading, spacing: 0) {
+                    CustomDivider()
+
+                    Text("Mission Highlights")
+                        .font(.title.bold())
+                        .padding(.bottom)
+
+                    Text(mission.description)
+                }
+                .padding(.horizontal)
             }
             .padding(.bottom)
         }
