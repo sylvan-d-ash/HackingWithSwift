@@ -18,6 +18,7 @@ import CupcakeCorner
 import Bookworm
 import Instafilter
 import Bucketlist
+import HotProspects
 
 struct ContentView: View {
     var body: some View {
@@ -58,6 +59,9 @@ struct ContentView: View {
                 }
                 NavigationLink("Bucket List") {
                     BucketlistView()
+                }
+                NavigationLink("Hot Prospects") {
+                    HotProspectsView()
                 }
             }
             .navigationTitle("Hacking With Swift")
