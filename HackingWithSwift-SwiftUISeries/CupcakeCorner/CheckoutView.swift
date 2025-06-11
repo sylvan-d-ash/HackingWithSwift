@@ -28,6 +28,7 @@ struct CheckoutView: View {
                     }
                 }
                 .frame(height: 233)
+                .accessibilityHidden(true)
 
                 Text("Your total is \(order.cost, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))")
                     .font(.title)
