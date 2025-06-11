@@ -32,9 +32,26 @@ struct RatingView: View {
                     image(for: number)
                         .foregroundStyle((number > rating) ? offColor : onColor)
                 }
+                .buttonStyle(.plain)
+                // NOTE: simpler accessibility approach
+                //.accessibilityLabel("\(number == 1 ? "1 star" : "\(number) stars")")
+                //.accessibilityAddTraits(number > rating ? [] : [.isSelected])
             }
         }
-        .buttonStyle(.plain)
+        // NOTE: more involved accessibility approach
+        .accessibilityElement()
+        .accessibilityLabel(label)
+        .accessibilityValue(rating == 1 ? "1 star" : "\(rating) stars")
+        .accessibilityAdjustableAction { direction in
+            switch direction {
+            case .increment:
+                if rating < maximumRating { rating += 1 }
+            case .decrement:
+                if rating > 1 { rating -= 1 }
+            default:
+                break
+            }
+        }
     }
 
     private func image(for number: Int) -> Image {
