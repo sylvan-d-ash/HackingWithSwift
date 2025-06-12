@@ -1,6 +1,6 @@
 # ``HotProspects``
 
-<!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
+An app to track who you meet at conferences.
 
 ## Overview
 
