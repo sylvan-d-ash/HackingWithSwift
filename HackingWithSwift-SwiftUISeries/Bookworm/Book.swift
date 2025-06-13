@@ -8,7 +8,7 @@
 import SwiftData
 
 @Model
-class Book {
+public class Book {
     var title: String
     var author: String
     var genre: String
@@ -24,24 +24,14 @@ class Book {
     }
 }
 
-public enum BookwormSwiftDataManager {
-    public static let shared: ModelContainer = {
-        do {
-            let schema = Schema([Book.self])
-            let config = ModelConfiguration()
-            return try ModelContainer(for: schema, configurations: [config])
-        } catch {
-            fatalError("Failed to initialize ModelContainer: \(error.localizedDescription)")
-        }
-    }()
-
-    public static func inMemory() throws -> ModelContainer {
+enum BookwormSwiftDataManager {
+    static func inMemory() throws -> ModelContainer {
         let schema = Schema([Book.self])
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
         return try ModelContainer(for: schema, configurations: [config])
     }
 
-    public static func previewContainer() -> ModelContainer {
+    static func previewContainer() -> ModelContainer {
         do {
             return try inMemory()
         } catch {
