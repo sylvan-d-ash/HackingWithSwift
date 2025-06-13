@@ -114,13 +114,24 @@ struct ProspectsView: View {
     var body: some View {
         NavigationStack {
             List(prospects, selection: $selectedProspects) { prospect in
-                VStack(alignment: .leading) {
-                    Text(prospect.name)
-                        .font(.headline)
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(prospect.name)
+                            .font(.headline)
 
-                    Text(prospect.emailAddress)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
+                        Text(prospect.emailAddress)
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                    }
+
+                    Spacer()
+
+                    if prospect.isContacted {
+                        Image(systemName: "checkmark.circle.fill")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .foregroundStyle(.green)
+                    }
                 }
                 .swipeActions {
                     if prospect.isContacted {
