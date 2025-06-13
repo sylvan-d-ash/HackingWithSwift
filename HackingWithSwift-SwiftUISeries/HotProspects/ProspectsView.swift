@@ -9,6 +9,27 @@ internal import CodeScanner
 import SwiftData
 import SwiftUI
 
+private struct SwipeActionView: View {
+    @Environment(\.modelContext) var modelContext
+    let prospect: Prospect
+    let title: String
+    let image: String
+    let tint: Color
+
+    var body: some View {
+        Group {
+            Button("Delete", systemImage: "trash", role: .destructive) {
+                modelContext.delete(prospect)
+            }
+
+            Button(title, systemImage: image) {
+                prospect.isContacted.toggle()
+            }
+            .tint(tint)
+        }
+    }
+}
+
 struct ProspectsView: View {
     enum FilterType {
         case none, contacted, uncontacted
@@ -53,6 +74,19 @@ struct ProspectsView: View {
                     Text(prospect.emailAddress)
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
+                }
+                .swipeActions {
+                    if prospect.isContacted {
+                        SwipeActionView(prospect: prospect,
+                                        title: "Mark Uncontacted",
+                                        image: "person.crop.circle.badge.xmark",
+                                        tint: .blue)
+                    } else {
+                        SwipeActionView(prospect: prospect,
+                                        title: "Mark Contacted",
+                                        image: "person.crop.circle.fill.badge.checkmark",
+                                        tint: .green)
+                    }
                 }
             }
             .navigationTitle(title)
