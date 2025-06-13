@@ -38,6 +38,7 @@ struct ProspectsView: View {
     @Environment(\.modelContext) var modelContext
     @Query(sort: \Prospect.name) var prospects: [Prospect]
     @State private var isShowingScanner = false
+    @State private var selectedProspects = Set<Prospect>()
 
     let filter: FilterType
 
@@ -66,7 +67,7 @@ struct ProspectsView: View {
 
     var body: some View {
         NavigationStack {
-            List(prospects) { prospect in
+            List(prospects, selection: $selectedProspects) { prospect in
                 VStack(alignment: .leading) {
                     Text(prospect.name)
                         .font(.headline)
@@ -88,12 +89,23 @@ struct ProspectsView: View {
                                         tint: .green)
                     }
                 }
+                .tag(prospect)
             }
             .navigationTitle(title)
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button("Scan") {
                         isShowingScanner = true
+                    }
+                }
+
+                ToolbarItem(placement: .topBarLeading) {
+                    EditButton()
+                }
+
+                if !selectedProspects.isEmpty {
+                    ToolbarItem(placement: .bottomBar) {
+                        Button("Delete Selected", action: delete)
                     }
                 }
             }
@@ -103,7 +115,7 @@ struct ProspectsView: View {
         }
     }
 
-    func handleScan(result: Result<ScanResult, ScanError>) {
+    private func handleScan(result: Result<ScanResult, ScanError>) {
         isShowingScanner = false
 
         switch result {
@@ -115,6 +127,12 @@ struct ProspectsView: View {
             modelContext.insert(person)
         case .failure(let error):
             print("Scanning failed: \(error.localizedDescription)")
+        }
+    }
+
+    private func delete() {
+        for prospect in selectedProspects {
+            modelContext.delete(prospect)
         }
     }
 }
