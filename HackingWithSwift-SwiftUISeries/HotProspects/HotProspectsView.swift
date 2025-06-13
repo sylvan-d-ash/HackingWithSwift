@@ -11,6 +11,16 @@ public struct HotProspectsView: View {
     public init() {}
 
     public var body: some View {
-        Text("hello universe!")
+        NavigationStack {
+            List {
+                NavigationLink("Local Notification") {
+                    LocalNotificationsView()
+                }
+            }
+        }
     }
+}
+
+#Preview {
+    HotProspectsView()
 }

@@ -29,8 +29,6 @@
 		048F54642DE470C500023A97 /* HWSNavigation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 048F545B2DE470C500023A97 /* HWSNavigation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		04B2F0202DF9D33F009574D9 /* HotProspects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B2F0182DF9D33F009574D9 /* HotProspects.framework */; };
 		04B2F0212DF9D33F009574D9 /* HotProspects.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04B2F0182DF9D33F009574D9 /* HotProspects.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		04B2F0282DFB536D009574D9 /* SwipeActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2F0272DFB536D009574D9 /* SwipeActionsView.swift */; };
-		04B2F0292DFB536D009574D9 /* SwipeActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2F0272DFB536D009574D9 /* SwipeActionsView.swift */; };
 		04D928962DE92D57006AA823 /* CupcakeCorner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D9288E2DE92D56006AA823 /* CupcakeCorner.framework */; };
 		04D928972DE92D57006AA823 /* CupcakeCorner.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04D9288E2DE92D56006AA823 /* CupcakeCorner.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		04FA03A02DEA12240034583B /* Bookworm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04FA03982DEA12240034583B /* Bookworm.framework */; };
@@ -170,7 +168,6 @@
 		048F545B2DE470C500023A97 /* HWSNavigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HWSNavigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04909D462DC23A660042647E /* HackingWithSwift-SwiftUISeries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HackingWithSwift-SwiftUISeries.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B2F0182DF9D33F009574D9 /* HotProspects.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HotProspects.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		04B2F0272DFB536D009574D9 /* SwipeActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeActionsView.swift; sourceTree = "<group>"; };
 		04D9288E2DE92D56006AA823 /* CupcakeCorner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CupcakeCorner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04FA03982DEA12240034583B /* Bookworm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bookworm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -366,7 +363,6 @@
 		04909D3D2DC23A650042647E = {
 			isa = PBXGroup;
 			children = (
-				04B2F0272DFB536D009574D9 /* SwipeActionsView.swift */,
 				04909D482DC23A660042647E /* HackingWithSwift-SwiftUISeries */,
 				045024712DC24129002EDF49 /* WeSplit */,
 				045024862DC24781002EDF49 /* GuessTheFlag */,
@@ -1079,7 +1075,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04B2F0282DFB536D009574D9 /* SwipeActionsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1108,7 +1103,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04B2F0292DFB536D009574D9 /* SwipeActionsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
