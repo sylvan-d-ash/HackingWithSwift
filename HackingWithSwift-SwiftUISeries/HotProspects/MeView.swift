@@ -1,5 +1,5 @@
 //
-//  ProspectsView.swift
+//  MeView.swift
 //  HotProspects
 //
 //  Created by Sylvan  on 13/06/2025.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct ProspectsView: View {
+struct MeView: View {
     var body: some View {
         Text("Hello universe!")
     }
 }
 
 #Preview {
-    ProspectsView()
+    MeView()
 }
