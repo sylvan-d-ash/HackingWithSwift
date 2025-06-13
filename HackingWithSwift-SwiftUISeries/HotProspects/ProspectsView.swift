@@ -8,6 +8,7 @@
 internal import CodeScanner
 import SwiftData
 import SwiftUI
+import UserNotifications
 
 private struct SwipeActionView: View {
     @Environment(\.modelContext) var modelContext
@@ -26,6 +27,51 @@ private struct SwipeActionView: View {
                 prospect.isContacted.toggle()
             }
             .tint(tint)
+
+            if !prospect.isContacted {
+                Button("Remind Me", systemImage: "bell") {
+                    addNotification(for: prospect)
+                }
+                .tint(.orange)
+            }
+        }
+    }
+
+    private func addNotification(for prospect: Prospect) {
+        let center = UNUserNotificationCenter.current()
+
+        let addRequest = {
+            let content = UNMutableNotificationContent()
+            content.title = "Contact \(prospect.name)"
+            content.subtitle = prospect.emailAddress
+            content.sound = .default
+
+            var dateComponents = DateComponents()
+            dateComponents.hour = 9
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+            // NOTE: for testing, this is better
+            //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+
+            let request = UNNotificationRequest(
+                identifier: UUID().uuidString,
+                content: content,
+                trigger: trigger
+            )
+            center.add(request)
+        }
+
+        center.getNotificationSettings { settings in
+            if settings.authorizationStatus == .authorized {
+                addRequest()
+            } else {
+                center.requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+                    if success {
+                        addRequest()
+                    } else if let error {
+                        print(error.localizedDescription)
+                    }
+                }
+            }
         }
     }
 }
