@@ -13,7 +13,7 @@ struct MagnifiyGestureView: View {
 
     var body: some View {
         Text("Hello Universe!")
-            .contentShape(Rectangle())
+            .frame(width: 200, height: 100)
             .background(.blue)
             .scaleEffect(finalAmount + currentAmount)
             .gesture(
