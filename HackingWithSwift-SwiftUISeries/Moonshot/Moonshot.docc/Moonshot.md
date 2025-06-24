@@ -1,6 +1,6 @@
 # ``Moonshot``
 
-<!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
+An app teaching users about space history with scroll views, Codable, and more.
 
 ## Overview
 

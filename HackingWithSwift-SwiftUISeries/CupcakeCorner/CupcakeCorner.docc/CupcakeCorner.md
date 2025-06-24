@@ -1,6 +1,6 @@
 # ``CupcakeCorner``
 
-<!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
+An app allowing a user to order cupcakes, and that also sends and receives JSON from the internet.
 
 ## Overview
 

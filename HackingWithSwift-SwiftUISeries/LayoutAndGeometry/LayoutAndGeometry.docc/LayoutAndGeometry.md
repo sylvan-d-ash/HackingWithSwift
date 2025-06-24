@@ -1,6 +1,6 @@
-# ``WordScramble``
+# ``LayoutAndGeometry``
 
-A letter rearranging game with LIst
+A technical project to explore the inner workings of SwiftUI's layout system.
 
 ## Overview
 

@@ -1,6 +1,6 @@
 # ``GuessTheFlag``
 
-<!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
+A game app with stacks, images, and alerts.
 
 ## Overview
 

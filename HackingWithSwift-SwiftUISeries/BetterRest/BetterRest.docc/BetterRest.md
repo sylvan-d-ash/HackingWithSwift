@@ -1,6 +1,6 @@
 # ``BetterRest``
 
-<!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
+An app using machine learning to improve sleep
 
 ## Overview
 

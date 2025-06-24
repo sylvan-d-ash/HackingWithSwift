@@ -1,6 +1,6 @@
 # ``iExpense``
 
-<!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
+An app to track expenses, and exploring how to bring in a second view. 
 
 ## Overview
 

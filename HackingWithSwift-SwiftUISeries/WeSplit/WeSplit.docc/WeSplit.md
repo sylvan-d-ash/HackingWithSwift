@@ -1,6 +1,6 @@
 # ``WeSplit``
 
-<!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
+A project to learn the basics of SwiftUI.
 
 ## Overview
 

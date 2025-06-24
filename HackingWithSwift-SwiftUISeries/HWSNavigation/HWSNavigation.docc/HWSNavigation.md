@@ -1,6 +1,6 @@
 # ``HWSNavigation``
 
-<!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
+An app exploring how to direct users around, either programmatically or using explicit input.
 
 ## Overview
 

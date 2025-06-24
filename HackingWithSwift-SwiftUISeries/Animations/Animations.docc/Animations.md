@@ -1,6 +1,6 @@
 # ``Animations``
 
-<!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
+An app to learn how to spruce up the UI with springs, bounces, and more.
 
 ## Overview
 
