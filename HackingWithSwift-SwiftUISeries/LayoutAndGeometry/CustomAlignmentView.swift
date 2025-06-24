@@ -12,6 +12,8 @@ struct CustomAlignmentView: View {
         HStack {
             VStack {
                 Text("@awesome_dev")
+                    .alignmentGuide(.midAccountAndName) { d in d[VerticalAlignment.center] }
+
                 Image(.background)
                     .resizable()
                     .frame(width: 64, height: 64)
@@ -20,9 +22,10 @@ struct CustomAlignmentView: View {
 
             VStack {
                 Text("Full Name")
-                Text("Awesome Dev")
+
+                Text("AWESOME DEV")
+                    .alignmentGuide(.midAccountAndName) { d in d[VerticalAlignment.center] }
                     .font(.largeTitle)
-                    .textCase(.uppercase)
             }
         }
     }
