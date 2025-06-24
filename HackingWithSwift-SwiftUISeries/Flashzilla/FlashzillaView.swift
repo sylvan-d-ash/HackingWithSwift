@@ -9,8 +9,11 @@ import SwiftUI
 
 public struct FlashzillaView: View {
     @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
+    @Environment(\.scenePhase) var scenePhase
+
     @State private var cards = Array<Card>(repeating: .example, count: 10)
     @State private var timeRemaining = 100
+    @State private var isActive = true
 
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
@@ -67,8 +70,17 @@ public struct FlashzillaView: View {
             }
         }
         .onReceive(timer) { time in
+            guard isActive else { return }
+
             if timeRemaining > 0 {
                 timeRemaining -= 1
+            }
+        }
+        .onChange(of: scenePhase) { _, _ in
+            if scenePhase == .active {
+                isActive = true
+            } else {
+                isActive = false
             }
         }
     }
