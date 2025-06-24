@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CardView: View {
+    @State private var isShowingAnswer = false
     let card: Card
 
     var body: some View {
@@ -21,9 +22,11 @@ struct CardView: View {
                     .font(.largeTitle)
                     .foregroundStyle(.black)
 
-                Text(card.answer)
-                    .font(.title)
-                    .foregroundStyle(.secondary)
+                if isShowingAnswer {
+                    Text(card.answer)
+                        .font(.title)
+                        .foregroundStyle(.secondary)
+                }
             }
             .padding(20)
             .multilineTextAlignment(.center)
@@ -31,6 +34,9 @@ struct CardView: View {
         // TIP: the smallest iPhones have a landscape width of 480 points,
         // so this means our card will be fully visible on all devices
         .frame(width: 450, height: 250)
+        .onTapGesture {
+            isShowingAnswer.toggle()
+        }
     }
 }
 
