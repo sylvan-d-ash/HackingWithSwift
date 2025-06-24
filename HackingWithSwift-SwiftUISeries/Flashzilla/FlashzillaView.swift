@@ -14,8 +14,8 @@ public struct FlashzillaView: View {
     @Environment(\.accessibilityVoiceOverEnabled) var voiceOverEnabled
     @Environment(\.scenePhase) var scenePhase
 
-    @State private var cards = Array<Card>(repeating: .example, count: 10)
-    @State private var timeRemaining = 100
+    @State private var cards = [Card]()
+    @State private var timeRemaining = 0
     @State private var isActive = true
     @State private var showingEditScreen = false
 
@@ -123,6 +123,7 @@ public struct FlashzillaView: View {
                 }
             }
         }
+        .onAppear(perform: resetCards)
         .onReceive(timer) { time in
             guard isActive else { return }
 
@@ -138,6 +139,11 @@ public struct FlashzillaView: View {
                 isActive = false
             }
         }
+        .sheet(
+            isPresented: $showingEditScreen,
+            onDismiss: resetCards,
+            content: EditCardsView.init
+        )
     }
 
     private func removeCard(at index: Int) {
@@ -150,9 +156,15 @@ public struct FlashzillaView: View {
     }
 
     private func resetCards() {
-        cards = Array<Card>(repeating: .example, count: 10)
         timeRemaining = 100
         isActive = true
+        loadData()
+    }
+
+    private func loadData() {
+        guard let data = UserDefaults.standard.data(forKey: "Cards") else { return }
+        guard let decoded = try? JSONDecoder().decode([Card].self, from: data) else { return }
+        cards = decoded
     }
 }
 
