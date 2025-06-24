@@ -17,6 +17,7 @@ public struct FlashzillaView: View {
     @State private var cards = Array<Card>(repeating: .example, count: 10)
     @State private var timeRemaining = 100
     @State private var isActive = true
+    @State private var showingEditScreen = false
 
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
@@ -60,6 +61,28 @@ public struct FlashzillaView: View {
                         .padding(.top)
                 }
             }
+
+            VStack {
+                HStack {
+                    Spacer()
+
+                    Button {
+                        showingEditScreen = true
+                    } label: {
+                        Image(systemName: "pencil.circle")
+                            .padding()
+                            .background(.black.opacity(0.7))
+                            .clipShape(.circle)
+                    }
+                }
+
+                Spacer()
+            }
+            .foregroundStyle(.white)
+            .font(.largeTitle)
+            .padding()
+            .accessibilityElement()
+            .accessibilityLabel("Edit Cards")
 
             if differentiateWithoutColor || voiceOverEnabled {
                 VStack {
