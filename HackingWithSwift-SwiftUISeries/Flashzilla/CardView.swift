@@ -13,12 +13,20 @@ struct CardView: View {
 
     let card: Card
     var removal: (() -> Void)?
+    private let distance: CGFloat = 70
 
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 25)
-                .fill(.white)
+                .fill(
+                    .white
+                        .opacity(1 - Double(abs(offset.width / distance)))
+                )
                 .shadow(radius: 10)
+                .background(
+                    RoundedRectangle(cornerRadius: 25)
+                        .fill(offset.width > 0 ? .green : .red)
+                )
 
             VStack {
                 Text(card.prompt)
@@ -39,7 +47,7 @@ struct CardView: View {
         .frame(width: 450, height: 250)
         .rotationEffect(.degrees(offset.width / 5.0))
         .offset(x: offset.width * 5)
-        .opacity(2 - Double(abs(offset.width / 50)))
+        .opacity(2 - Double(abs(offset.width / distance)))
         .gesture(
             DragGesture()
                 .onChanged { value in
