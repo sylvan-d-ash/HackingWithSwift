@@ -10,6 +10,9 @@ import SwiftUI
 public struct FlashzillaView: View {
     @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
     @State private var cards = Array<Card>(repeating: .example, count: 10)
+    @State private var timeRemaining = 100
+
+    private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
     public init() {}
 
@@ -20,6 +23,14 @@ public struct FlashzillaView: View {
                 .ignoresSafeArea()
 
             VStack {
+                Text("Time: \(timeRemaining)")
+                    .font(.largeTitle)
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 5)
+                    .background(.black.opacity(0.75))
+                    .clipShape(.capsule)
+
                 ZStack {
                     ForEach(0..<cards.count, id: \.self) { index in
                         CardView(card: cards[index]) {
@@ -51,6 +62,7 @@ public struct FlashzillaView: View {
                     }
                     .foregroundStyle(.white)
                     .font(.largeTitle)
+                    .padding()
                 }
             }
         }
