@@ -20,7 +20,22 @@ public struct FlashzillaView: View {
                 .ignoresSafeArea()
 
             VStack {
-                if differentiateWithoutColor {
+                ZStack {
+                    ForEach(0..<cards.count, id: \.self) { index in
+                        CardView(card: cards[index]) {
+                            withAnimation {
+                                removeCard(at: index)
+                            }
+                        }
+                            .stacked(at: index, in: cards.count)
+                    }
+                }
+            }
+
+            if differentiateWithoutColor {
+                VStack {
+                    Spacer()
+
                     HStack {
                         Image(systemName: "xmark.circle")
                             .padding()
@@ -36,19 +51,12 @@ public struct FlashzillaView: View {
                     }
                     .foregroundStyle(.white)
                     .font(.largeTitle)
-                    .padding()
                 }
-
-                ZStack {
-                    ForEach(0..<cards.count, id: \.self) { index in
-                        CardView(card: cards[index]) {
-                            withAnimation {
-                                removeCard(at: index)
-                            }
-                        }
-                            .stacked(at: index, in: cards.count)
-                    }
-                }
+            }
+        }
+        .onReceive(timer) { time in
+            if timeRemaining > 0 {
+                timeRemaining -= 1
             }
         }
     }
