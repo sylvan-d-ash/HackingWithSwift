@@ -125,7 +125,7 @@ public struct FlashzillaView: View {
         }
         .onAppear(perform: resetCards)
         .onReceive(timer) { time in
-            guard isActive else { return }
+            guard isActive, !cards.isEmpty else { return }
 
             if timeRemaining > 0 {
                 timeRemaining -= 1
@@ -151,7 +151,7 @@ public struct FlashzillaView: View {
         cards.remove(at: index)
 
         if cards.isEmpty {
-            isActive = true
+            isActive = false
         }
     }
 
