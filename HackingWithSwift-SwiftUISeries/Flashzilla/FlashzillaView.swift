@@ -7,8 +7,11 @@
 
 import SwiftUI
 
+private class FlashzillaBundleLocator {}
+
 public struct FlashzillaView: View {
     @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
+    @Environment(\.accessibilityVoiceOverEnabled) var voiceOverEnabled
     @Environment(\.scenePhase) var scenePhase
 
     @State private var cards = Array<Card>(repeating: .example, count: 10)
@@ -21,7 +24,7 @@ public struct FlashzillaView: View {
 
     public var body: some View {
         ZStack {
-            Image(.background)
+            Image(decorative: "background", bundle: Bundle(for: FlashzillaBundleLocator.self))
                 .resizable()
                 .ignoresSafeArea()
 
@@ -43,6 +46,7 @@ public struct FlashzillaView: View {
                         }
                         .stacked(at: index, in: cards.count)
                         .allowsHitTesting(index == cards.count - 1)
+                        .accessibilityHidden(index < cards.count - 1)
                     }
                 }
                 .allowsHitTesting(timeRemaining > 0)
@@ -57,22 +61,38 @@ public struct FlashzillaView: View {
                 }
             }
 
-            if differentiateWithoutColor {
+            if differentiateWithoutColor || voiceOverEnabled {
                 VStack {
                     Spacer()
 
                     HStack {
-                        Image(systemName: "xmark.circle")
-                            .padding()
-                            .background(.black.opacity(0.7))
-                            .clipShape(.circle)
+                        Button {
+                            withAnimation {
+                                removeCard(at: cards.count - 1)
+                            }
+                        } label: {
+                            Image(systemName: "xmark.circle")
+                                .padding()
+                                .background(.black.opacity(0.7))
+                                .clipShape(.circle)
+                        }
+                        .accessibilityLabel("Wrong")
+                        .accessibilityHint("Mark you answer as being incorrect.")
 
                         Spacer()
 
-                        Image(systemName: "checkmark.circle")
-                            .padding()
-                            .background(.black.opacity(0.7))
-                            .clipShape(.circle)
+                        Button {
+                            withAnimation {
+                                removeCard(at: cards.count - 1)
+                            }
+                        } label: {
+                            Image(systemName: "checkmark.circle")
+                                .padding()
+                                .background(.black.opacity(0.7))
+                                .clipShape(.circle)
+                        }
+                        .accessibilityLabel("Correct")
+                        .accessibilityHint("Mark you answer as being correct.")
                     }
                     .foregroundStyle(.white)
                     .font(.largeTitle)
@@ -98,6 +118,7 @@ public struct FlashzillaView: View {
     }
 
     private func removeCard(at index: Int) {
+        guard index >= 0 else { return }
         cards.remove(at: index)
 
         if cards.isEmpty {
