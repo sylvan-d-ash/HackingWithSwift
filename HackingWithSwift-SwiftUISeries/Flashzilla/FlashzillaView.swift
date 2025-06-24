@@ -8,6 +8,7 @@
 import SwiftUI
 
 public struct FlashzillaView: View {
+    @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
     @State private var cards = Array<Card>(repeating: .example, count: 10)
 
     public init() {}
@@ -19,6 +20,25 @@ public struct FlashzillaView: View {
                 .ignoresSafeArea()
 
             VStack {
+                if differentiateWithoutColor {
+                    HStack {
+                        Image(systemName: "xmark.circle")
+                            .padding()
+                            .background(.black.opacity(0.7))
+                            .clipShape(.circle)
+
+                        Spacer()
+
+                        Image(systemName: "checkmark.circle")
+                            .padding()
+                            .background(.black.opacity(0.7))
+                            .clipShape(.circle)
+                    }
+                    .foregroundStyle(.white)
+                    .font(.largeTitle)
+                    .padding()
+                }
+
                 ZStack {
                     ForEach(0..<cards.count, id: \.self) { index in
                         CardView(card: cards[index]) {
