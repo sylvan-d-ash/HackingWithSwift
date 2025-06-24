@@ -9,11 +9,24 @@ import SwiftUI
 
 public struct FlashzillaView: View {
     @State private var cards = Array<Card>(repeating: .example, count: 10)
-    
+
     public init() {}
 
     public var body: some View {
-        Text("Hello universe")
+        ZStack {
+            Image(.background)
+                .resizable()
+                .ignoresSafeArea()
+
+            VStack {
+                ZStack {
+                    ForEach(0..<cards.count, id: \.self) { index in
+                        CardView(card: cards[index])
+                            .stacked(at: index, in: cards.count)
+                    }
+                }
+            }
+        }
     }
 }
 
