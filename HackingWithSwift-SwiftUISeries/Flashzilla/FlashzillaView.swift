@@ -41,10 +41,19 @@ public struct FlashzillaView: View {
                                 removeCard(at: index)
                             }
                         }
-                            .stacked(at: index, in: cards.count)
+                        .stacked(at: index, in: cards.count)
                     }
                 }
                 .allowsHitTesting(timeRemaining > 0)
+
+                if cards.isEmpty {
+                    Button("Start Again", action: resetCards)
+                        .padding()
+                        .background(.white)
+                        .foregroundStyle(.black)
+                        .clipShape(.capsule)
+                        .padding(.top)
+                }
             }
 
             if differentiateWithoutColor {
@@ -79,6 +88,7 @@ public struct FlashzillaView: View {
         }
         .onChange(of: scenePhase) { _, _ in
             if scenePhase == .active {
+                guard !cards.isEmpty else { return }
                 isActive = true
             } else {
                 isActive = false
@@ -88,6 +98,16 @@ public struct FlashzillaView: View {
 
     private func removeCard(at index: Int) {
         cards.remove(at: index)
+
+        if cards.isEmpty {
+            isActive = true
+        }
+    }
+
+    private func resetCards() {
+        cards = Array<Card>(repeating: .example, count: 10)
+        timeRemaining = 100
+        isActive = true
     }
 }
 
