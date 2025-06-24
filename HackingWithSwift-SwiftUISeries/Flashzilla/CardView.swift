@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CardView: View {
     @State private var isShowingAnswer = false
+    @State private var offset = CGSize.zero
+
     let card: Card
 
     var body: some View {
@@ -34,6 +36,22 @@ struct CardView: View {
         // TIP: the smallest iPhones have a landscape width of 480 points,
         // so this means our card will be fully visible on all devices
         .frame(width: 450, height: 250)
+        .rotationEffect(.degrees(offset.width / 5.0))
+        .offset(x: offset.width * 5)
+        .opacity(2 - Double(abs(offset.width / 50)))
+        .gesture(
+            DragGesture()
+                .onChanged { value in
+                    offset = value.translation
+                }
+                .onEnded { _ in
+                    if abs(offset.width) > 100 {
+                        //
+                    } else {
+                        offset = .zero
+                    }
+                }
+        )
         .onTapGesture {
             isShowingAnswer.toggle()
         }
