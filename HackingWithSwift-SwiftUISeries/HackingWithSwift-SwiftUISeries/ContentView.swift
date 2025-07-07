@@ -21,6 +21,7 @@ import Bucketlist
 import HotProspects
 import Flashzilla
 import LayoutAndGeometry
+import SnowSeeker
 
 struct ContentView: View {
     var body: some View {
@@ -70,6 +71,9 @@ struct ContentView: View {
                 }
                 NavigationLink("Layout & Geometry") {
                     LayoutAndGeometryView()
+                }
+                NavigationLink("SnowSeeker") {
+                    SnowSeekerView()
                 }
             }
             .navigationTitle("Hacking With Swift")
