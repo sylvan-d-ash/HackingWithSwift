@@ -7,8 +7,6 @@
 
 import Foundation
 
-private class SnowSeekerBundleLocator {}
-
 struct Resort: Codable, Hashable, Identifiable {
     let id: String
     let name: String
