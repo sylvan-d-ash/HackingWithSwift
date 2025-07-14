@@ -45,6 +45,12 @@ public struct SnowSeekerView: View {
                             Text("\(resort.runs) runs")
                                 .foregroundStyle(.secondary)
                         }
+
+                        Spacer()
+
+                        Image(systemName: "heart.fill")
+                            .foregroundStyle(.red)
+                            .accessibilityLabel("This is a favourite resort")
                     }
                 }
             }
