@@ -41,7 +41,7 @@ public struct SnowSeekerView: View {
             }
             .navigationTitle("Resorts")
         } detail: {
-            Text("Detail")
+            WelcomeView()
         }
     }
 }
