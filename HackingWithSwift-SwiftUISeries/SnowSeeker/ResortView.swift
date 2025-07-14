@@ -127,6 +127,7 @@ private struct FacilityView: View {
 struct ResortView: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.dynamicTypeSize) var dynamicTypeSize
+    @Environment(Favourites.self) var favourites
 
     @State private var selectedFacility: Facility?
     @State private var showingFacility = false
@@ -142,9 +143,13 @@ struct ResortView: View {
                         .scaledToFit()
 
                     Button {
-                        //
+                        if favourites.contains(resort) {
+                            favourites.remove(resort)
+                        } else {
+                            favourites.add(resort)
+                        }
                     } label: {
-                        Image(systemName: "heart")
+                        Image(systemName: favourites.contains(resort) ? "heart.fill" : "heart")
                             .resizable()
                             .frame(width: 40, height: 40)
                             .tint(.red)
@@ -200,5 +205,6 @@ struct ResortView: View {
 #Preview {
     NavigationStack {
         ResortView(resort: .example)
+            .environment(Favourites())
     }
 }
