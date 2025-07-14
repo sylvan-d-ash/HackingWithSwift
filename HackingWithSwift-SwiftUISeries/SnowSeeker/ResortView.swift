@@ -94,6 +94,7 @@ struct ResortView: View {
                         ForEach(resort.facilityTypes) { facility in
                             facility.icon
                                 .font(.title)
+                                .frame(maxWidth: .infinity)
                         }
                     }
                     .padding(.vertical)
