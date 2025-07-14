@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DetailSectionView: View {
+private struct DetailSectionView: View {
     let title: String
     let value: String
 
@@ -22,7 +22,7 @@ struct DetailSectionView: View {
     }
 }
 
-struct ResortDetailsView: View {
+private struct ResortDetailsView: View {
     let resort: Resort
 
     private var size: String {
@@ -46,7 +46,7 @@ struct ResortDetailsView: View {
     }
 }
 
-struct SkiDetailsView: View {
+private struct SkiDetailsView: View {
     let resort: Resort
 
     var body: some View {
@@ -90,8 +90,13 @@ struct ResortView: View {
                     Text("Facilities")
                         .font(.headline)
 
-                    Text(resort.facilities, format: .list(type: .and))
-                        .padding(.vertical)
+                    HStack {
+                        ForEach(resort.facilityTypes) { facility in
+                            facility.icon
+                                .font(.title)
+                        }
+                    }
+                    .padding(.vertical)
                 }
             }
         }
