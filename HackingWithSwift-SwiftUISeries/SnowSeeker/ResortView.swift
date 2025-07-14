@@ -141,6 +141,16 @@ struct ResortView: View {
                     Image(decorative: resort.id, bundle: Bundle(for: SnowSeekerBundleLocator.self))
                         .resizable()
                         .scaledToFit()
+                        .overlay(
+                            Text(resort.imageCredit)
+                                .font(.caption)
+                                .foregroundStyle(.white)
+                                .padding(6)
+                                .background(.black.opacity(0.5))
+                                .clipShape(.capsule)
+                                .padding([.bottom, .leading], 6),
+                            alignment: .bottomLeading
+                        )
 
                     Button {
                         if favourites.contains(resort) {
