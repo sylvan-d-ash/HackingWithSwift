@@ -10,13 +10,22 @@ import SwiftUI
 class SnowSeekerBundleLocator {}
 
 public struct SnowSeekerView: View {
+    @State private var searchText = ""
     private let resorts = Resort.allResorts
+
+    private var filteredResorts: [Resort] {
+        if searchText.isEmpty {
+            resorts
+        } else {
+            resorts.filter { $0.name.localizedStandardContains(searchText) }
+        }
+    }
 
     public init() {}
 
     public var body: some View {
         NavigationSplitView {
-            List(resorts) { resort in
+            List(filteredResorts) { resort in
                 NavigationLink(value: resort) {
                     HStack {
                         Image(resort.country, bundle: Bundle(for: SnowSeekerBundleLocator.self))
@@ -43,6 +52,7 @@ public struct SnowSeekerView: View {
             .navigationDestination(for: Resort.self) { resort in
                 ResortView(resort: resort)
             }
+            .searchable(text: $searchText, prompt: "Search for a resort")
         } detail: {
             WelcomeView()
         }
