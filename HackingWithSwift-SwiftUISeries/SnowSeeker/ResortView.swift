@@ -7,6 +7,57 @@
 
 import SwiftUI
 
+struct DetailSectionView: View {
+    let title: String
+    let value: String
+
+    var body: some View {
+        VStack {
+            Text(title)
+                .font(.caption.bold())
+
+            Text(value)
+                .font(.title3)
+        }
+    }
+}
+
+struct ResortDetailsView: View {
+    let resort: Resort
+
+    private var size: String {
+        switch resort.size {
+        case 1: "Small"
+        case 2: "Average"
+        default: "Large"
+        }
+    }
+
+    private var price: String {
+        String(repeating: "$", count: resort.price)
+    }
+
+    var body: some View {
+        Group {
+            DetailSectionView(title: "Size", value: size)
+            DetailSectionView(title: "Price", value: price)
+        }
+        .frame(maxWidth: .infinity)
+    }
+}
+
+struct SkiDetailsView: View {
+    let resort: Resort
+
+    var body: some View {
+        Group {
+            DetailSectionView(title: "Elevation", value: "\(resort.elevation)m")
+            DetailSectionView(title: "Snow", value: "\(resort.snowDepth)cm")
+        }
+        .frame(maxWidth: .infinity)
+    }
+}
+
 struct ResortView: View {
     let resort: Resort
 
@@ -17,6 +68,13 @@ struct ResortView: View {
                     .resizable()
                     .scaledToFit()
 
+                HStack {
+                    ResortDetailsView(resort: resort)
+                    SkiDetailsView(resort: resort)
+                }
+                .padding(.vertical)
+                .background(.primary.opacity(0.1))
+
                 Group {
                     Text(resort.description)
                         .padding(.vertical)
@@ -24,7 +82,7 @@ struct ResortView: View {
                     Text("Facilities")
                         .font(.headline)
 
-                    Text(resort.facilities.joined(separator: ", "))
+                    Text(resort.facilities, format: .list(type: .and))
                         .padding(.vertical)
                 }
             }
