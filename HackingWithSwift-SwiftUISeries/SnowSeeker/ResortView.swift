@@ -136,9 +136,22 @@ struct ResortView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
-                Image(decorative: resort.id, bundle: Bundle(for: SnowSeekerBundleLocator.self))
-                    .resizable()
-                    .scaledToFit()
+                ZStack(alignment: .topTrailing) {
+                    Image(decorative: resort.id, bundle: Bundle(for: SnowSeekerBundleLocator.self))
+                        .resizable()
+                        .scaledToFit()
+
+                    Button {
+                        //
+                    } label: {
+                        Image(systemName: "heart")
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                            .tint(.red)
+                            .padding()
+                            .accessibilityLabel("This is a favourite resort")
+                    }
+                }
 
                 HStack {
                     if horizontalSizeClass == .compact, dynamicTypeSize > .large {
