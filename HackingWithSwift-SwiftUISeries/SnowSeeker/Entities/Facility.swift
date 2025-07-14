@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Facility: Identifiable {
+struct Facility: Identifiable, Equatable {
     let id = UUID()
     let name: String
 

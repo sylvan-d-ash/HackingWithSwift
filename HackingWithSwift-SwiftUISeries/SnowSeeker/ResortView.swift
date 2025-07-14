@@ -58,6 +58,72 @@ private struct SkiDetailsView: View {
     }
 }
 
+private struct TooltipBubble: View {
+    let title: String
+    let message: String
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text(title)
+                .font(.headline)
+                .bold()
+            Text(message)
+                .font(.body)
+        }
+        .padding()
+        .background(.thinMaterial)
+        .cornerRadius(10)
+        .shadow(radius: 4)
+    }
+}
+
+private struct FacilityView: View {
+    let facility: Facility
+    @Binding var selectedFacility: Facility?
+
+    var body: some View {
+        ZStack {
+            Button {
+                if selectedFacility == facility {
+                    selectedFacility = nil
+                } else {
+                    selectedFacility = facility
+                }
+            } label: {
+                facility.icon
+                    .font(.title)
+                    .frame(maxWidth: .infinity)
+            }
+//            .popover(isPresented: Binding(
+//                get: { showingFacility && selectedFacility == facility },
+//                set: { newValue in
+//                    if !newValue {
+//                        showingFacility = false
+//                    }
+//                }
+//            )) {
+//                VStack(alignment: .leading, spacing: 8) {
+//                    Text(facility.name)
+//                        .font(.headline)
+//                        .bold()
+//                    Text(facility.description)
+//                        .font(.body)
+//                }
+//                .padding()
+//                .frame(width: 200)
+//            }
+
+            if selectedFacility == facility {
+                TooltipBubble(title: facility.name, message: facility.description)
+                    .frame(maxWidth: 200)
+                    .offset(y: -60) // position bubble above
+                    .transition(.opacity.combined(with: .scale))
+                    .zIndex(1)
+            }
+        }
+    }
+}
+
 struct ResortView: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.dynamicTypeSize) var dynamicTypeSize
