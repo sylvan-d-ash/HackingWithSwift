@@ -62,6 +62,9 @@ struct ResortView: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.dynamicTypeSize) var dynamicTypeSize
 
+    @State private var selectedFacility: Facility?
+    @State private var showingFacility = false
+
     let resort: Resort
 
     var body: some View {
@@ -92,9 +95,14 @@ struct ResortView: View {
 
                     HStack {
                         ForEach(resort.facilityTypes) { facility in
-                            facility.icon
-                                .font(.title)
-                                .frame(maxWidth: .infinity)
+                            Button {
+                                selectedFacility = facility
+                                showingFacility = true
+                            } label: {
+                                facility.icon
+                                    .font(.title)
+                                    .frame(maxWidth: .infinity)
+                            }
                         }
                     }
                     .padding(.vertical)
