@@ -7,6 +7,8 @@
 
 import Foundation
 
+private class SnowSeekerBundleLocator {}
+
 struct Resort: Codable, Hashable, Identifiable {
     let id: String
     let name: String
@@ -19,4 +21,7 @@ struct Resort: Codable, Hashable, Identifiable {
     let elevation: Int
     let runs: Int
     let facilities: [String]
+
+    static let allResorts: [Resort] = Bundle(for: SnowSeekerBundleLocator.self).decode("resorts.json")
+    static let example = allResorts.first!
 }
