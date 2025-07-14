@@ -10,6 +10,7 @@ import SwiftUI
 class SnowSeekerBundleLocator {}
 
 public struct SnowSeekerView: View {
+    @State private var favourites = Favourites()
     @State private var searchText = ""
     private let resorts = Resort.allResorts
 
@@ -46,11 +47,13 @@ public struct SnowSeekerView: View {
                                 .foregroundStyle(.secondary)
                         }
 
-                        Spacer()
+                        if favourites.contains(resort) {
+                            Spacer()
 
-                        Image(systemName: "heart.fill")
-                            .foregroundStyle(.red)
-                            .accessibilityLabel("This is a favourite resort")
+                            Image(systemName: "heart.fill")
+                                .foregroundStyle(.red)
+                                .accessibilityLabel("This is a favourite resort")
+                        }
                     }
                 }
             }
@@ -62,6 +65,7 @@ public struct SnowSeekerView: View {
         } detail: {
             WelcomeView()
         }
+        .environment(favourites)
     }
 }
 
